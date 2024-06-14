@@ -6,3 +6,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.homeImage {
+  background-size: 100% 100%;
+  margin-top: -120px;
+}

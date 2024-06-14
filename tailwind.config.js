@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'custom-image': "url('<path-to-image>')",
+        'home-header-mobile': "url('/public/assets/home/mobile/image-header.jpg')"
       },
       colors: {
         lightgray: '#d3d3d3',
