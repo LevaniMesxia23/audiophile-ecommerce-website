@@ -2,7 +2,7 @@ import ZX9Image from "../../public/assets/product-zx9-speaker/mobile/image-remov
 function SeeProducts() {
   return (
     <div className=" flex justify-center items-center mt-[7.5rem]">
-      <div className=" w-full max-w-[20rem] bg-[#D87D4A] rounded-[0.5rem] flex justify-center items-center flex-col pb-[3.44rem]">
+      <div className=" w-full max-w-[20.4375rem]  bg-[#D87D4A] rounded-[0.5rem] flex justify-center items-center flex-col pb-[3.44rem] ">
         <div className=" border-[1px] rounded-[20rem] h-[20rem] border-white/50 w-[20rem] flex items-center justify-center">
         <div className=" border-[1px] rounded-[17.4375rem] h-[17.4375rem] border-white/50 w-[17.4375rem] flex items-center justify-center">
           <img src={ZX9Image} alt="" />

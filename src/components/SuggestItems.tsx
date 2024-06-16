@@ -7,8 +7,8 @@ function SuggestItems() {
   return (
     <>
       <div className=" flex flex-col justify-center items-center">
-        <div className="w-[23.4375rem] mt-20 relative">
-          <div className=" w-full bg-[#F1F1F1] rounded-[0.5rem]">
+        <div className="w-[23.4375rem] mt-20 relative flex justify-center">
+          <div className=" w-full bg-[#F1F1F1] rounded-[0.5rem] max-w-[20.4375rem]">
             <div className=" flex items-center justify-center flex-col gap-[1.06rem]">
               <span className=" mt-[5.5rem]">HEADPHONES</span>
               <div className=" flex items-center gap-[0.83rem] mb-[1.57rem]">
@@ -30,8 +30,8 @@ function SuggestItems() {
       </div>
 
       <div className=" flex flex-col justify-center items-center">
-        <div className="w-[23.4375rem] mt-20 relative">
-          <div className=" w-full bg-[#F1F1F1] rounded-[0.5rem]">
+        <div className="w-[23.4375rem] mt-20 relative flex justify-center">
+          <div className=" w-full bg-[#F1F1F1] rounded-[0.5rem] max-w-[20.4375rem]">
             <div className=" flex items-center justify-center flex-col gap-[1.06rem]">
               <span className=" mt-[5.5rem]">SPEAKERS</span>
               <div className=" flex items-center gap-[0.83rem] mb-[1.57rem]">
@@ -53,8 +53,8 @@ function SuggestItems() {
       </div>
 
       <div className=" flex flex-col justify-center items-center">
-        <div className="w-[23.4375rem] mt-20 relative">
-          <div className=" w-full bg-[#F1F1F1] rounded-[0.5rem]">
+        <div className="w-[23.4375rem] mt-20 relative flex justify-center">
+          <div className=" w-full bg-[#F1F1F1] rounded-[0.5rem] max-w-[20.4375rem]">
             <div className=" flex items-center justify-center flex-col gap-[1.06rem]">
               <span className=" mt-[5.5rem]">EARPHONES</span>
               <div className=" flex items-center gap-[0.83rem] mb-[1.57rem]">
