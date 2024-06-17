@@ -1,4 +1,5 @@
 import ZX9Image from "../../public/assets/product-zx9-speaker/mobile/image-removebg-preview(38).png"
+import EarphonesImage from "../../public/assets/home/mobile/image-earphones-yx1.jpg"
 
 function SeeProducts() {
   return (
@@ -14,13 +15,21 @@ function SeeProducts() {
           <button className=" bg-black text-white py-[0.94rem] px-[1.9rem] mt-6">See Product</button>
       </div>
 
-    <div>
       <div className=" bg-speaker-image bg-[center] bg-no-repeat h-[20rem] flex flex-col justify-center items-start rounded-[0.5rem] text-[1.75rem] gap-[2rem] min-w-[20.4375rem] pl-6">
     <span className=" font-bold">ZX7 SPEAKER</span>
     <button className=" w-[10rem] h-[3rem] border-black border-[1px] text-[0.8125rem] font-bold uppercase leading-[0.0625rem]">See Product</button>
       </div>
-    </div>
       
+      <div>
+        <div className=" mb-8">
+        <img src={EarphonesImage} className=" max-w-[20.4375rem] rounded-[0.5rem]" alt="" />
+        </div>
+
+        <div className=" bg-[#F1F1F1] flex flex-col justify-center items-start rounded-[0.5rem] text-[1.75rem] gap-[2rem] min-w-[20.4375rem] pl-6 py-[2.56rem] ">
+          <span className=" font-bold ">YX1 EARPHONES</span>
+          <button className=" w-[10rem] h-[3rem] border-black border-[1px] text-[0.8125rem] font-bold uppercase leading-[0.0625rem]">See Product</button>
+      </div>
+      </div>
     </div>
   )
 }
