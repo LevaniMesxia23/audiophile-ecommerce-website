@@ -36,6 +36,4 @@ function SeeProducts() {
 
 export default SeeProducts
 
-// 
-//
 

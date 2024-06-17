@@ -1,8 +1,8 @@
-import HomeMain from '../components/HomeMain';
-import SuggestItems from '../components/SuggestItems';
-import SeeProducts from '../components/SeeProducts';
-import Information from '../components/Information';
-import Footer from '../components/Footer';
+import HomeMain from "../components/HomeMain";
+import SuggestItems from "../components/CategoryBoxes";
+import Information from "../components/Information";
+import Footer from "../components/Footer";
+import SeeProducts from "../components/SeeProducts";
 
 function Home() {
   return (
@@ -13,7 +13,7 @@ function Home() {
       <Information />
       <Footer />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
