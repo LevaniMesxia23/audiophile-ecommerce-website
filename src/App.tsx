@@ -2,7 +2,7 @@ import Header from "./components/Header"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './index.css';
 import Home from "./pages/Home";
-import HeadphonesPage from "./pages/HeadphonesPage";
+import EarphonesPage from "./pages/EarphonesPage";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
      <Header />
       <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="/headphones" element={<HeadphonesPage />} />
+        <Route path="/earphones" element={<EarphonesPage />} />
       </Routes>
      </BrowserRouter>
     </>

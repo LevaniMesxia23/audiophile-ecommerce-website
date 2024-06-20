@@ -1,7 +1,7 @@
 import LastThreeComponents from "../components/LastThreeComponents";
 import Data from "../../starter-code/data.json";
 
-function HeadphonesPage() {
+function EarphonesPage() {
   const FirstId = Data[0];
   return (
     <div>
@@ -37,4 +37,4 @@ function HeadphonesPage() {
   );
 }
 
-export default HeadphonesPage;
+export default EarphonesPage;
