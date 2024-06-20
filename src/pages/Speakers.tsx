@@ -2,16 +2,15 @@ import React from 'react';
 import LastThreeComponents from "../components/LastThreeComponents";
 import Data from "../../starter-code/data.json";
 
-const HeadPhones: React.FC = () => {
-  const firstId = Data
-  const filtered = firstId.filter(item => item.category === "headphones")
+const Speakers: React.FC = () => {
+  const firstId: Product[] = Data.slice(4).reverse() as Product[];
   return (
     <div>
-      {filtered.length > 0 && (<div className="bg-black py-8 w-screen flex items-center justify-center uppercase text-[1.75rem] leading-[0.125rem] -mt-1 mb-16">
-        <p className="text-white">{filtered[0].category}</p>
-      </div>)}
-      {filtered.map((item, index) => (
+      {firstId.map((item, index) => (
         <div key={index} className="flex items-center justify-center flex-col mb-[6.5rem]">
+          {item.id === 5 ? null : <div className="bg-black py-8 w-screen flex items-center justify-center uppercase text-[1.75rem] leading-[0.125rem] -mt-1 mb-16">
+            <p className="text-white">{item.category}</p>
+          </div>}
           <img
             src={item.image.mobile}
             alt={item.name}
@@ -36,4 +35,4 @@ const HeadPhones: React.FC = () => {
   );
 }
 
-export default HeadPhones;
+export default Speakers;
