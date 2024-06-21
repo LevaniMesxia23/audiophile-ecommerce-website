@@ -12,3 +12,8 @@ interface Product {
   image: Image;
   description: string;
 }
+
+interface MyContextType {
+  show: boolean;
+  setShow: React.Dispatch<React.SetStateAction<boolean>>;
+}

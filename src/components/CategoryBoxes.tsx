@@ -12,6 +12,7 @@ function SuggestItems() {
   }, []);
   return (
     <>
+    <div className=" bg-white pb-10">
       <div className=" flex flex-col justify-center items-center">
         <div className="w-[23.4375rem] mt-20 relative flex justify-center">
           <div className=" w-full bg-[#F1F1F1] rounded-[0.5rem] max-w-[20.4375rem]">
@@ -80,6 +81,7 @@ function SuggestItems() {
           />
         </div>
       </div>
+    </div>
     </>
   );
 }
