@@ -2,15 +2,16 @@ import Hamburger from "../../public/assets/shared/tablet/icon-hamburger.svg";
 import Cart from "../../public/assets/shared/desktop/icon-cart.svg";
 import CategoryBoxes from "./CategoryBoxes";
 import { useContext } from "react";
-import { Mycontext } from "../App";
+import { MyContext } from "../App";
+import "../index.css"
 
 function Header() {
-  const context = useContext(Mycontext)
-
+  const context = useContext(MyContext)
+  
   if(!context){
-    throw new Error("throw error")
+    throw new Error("Header must be used within a MyContext.Provider")
   }
-   const {show,setShow} = context
+  const {show,setShow} = context
   return (
     <>
     <div className=" relative">
@@ -24,7 +25,7 @@ function Header() {
     <div className=" h-[0.0625rem] opacity-[0.2] bg-white">
     </div>
     </div>
-    {show && <CategoryBoxes />}
+    {show && <CategoryBoxes className="absolute-category-boxes"/>}
 
     </>
   );
