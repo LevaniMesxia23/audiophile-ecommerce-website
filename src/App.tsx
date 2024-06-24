@@ -6,6 +6,8 @@ import EarphonesPage from "./pages/EarphonesPage";
 import Speakers from "./pages/Speakers";
 import HeadPhones from "./pages/HeadPhones";
 import './index.css';
+import CategoryBoxes from "./components/CategoryBoxes";
+
 
 export const MyContext = createContext<MyContextType | null>(null);
 
@@ -13,9 +15,11 @@ function App() {
   const [show, setShow] = useState<boolean>(false);
 
   return (
-    <div className={`${show ? "bg-black/40" : null} z-10`}>
+    <>
+    {show && <div className=" fixed h-screen w-screen z-40 bg-black/40 " onClick={() => setShow(!show)}></div>}
       <MyContext.Provider value={{ show, setShow }}>
         <BrowserRouter>
+        {show && <div className=" absolute z-50 left-0 bg-white top-[89px] w-full"><CategoryBoxes /></div>}
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -25,7 +29,8 @@ function App() {
           </Routes>
         </BrowserRouter>
       </MyContext.Provider>
-    </div>
+    </>
+    
   );
 }
 

@@ -1,6 +1,5 @@
 import Hamburger from "../../public/assets/shared/tablet/icon-hamburger.svg";
 import Cart from "../../public/assets/shared/desktop/icon-cart.svg";
-import CategoryBoxes from "./CategoryBoxes";
 import { useContext } from "react";
 import { MyContext } from "../App";
 import "../index.css"
@@ -25,7 +24,6 @@ function Header() {
     <div className=" h-[0.0625rem] opacity-[0.2] bg-white">
     </div>
     </div>
-    {show && <CategoryBoxes className="absolute-category-boxes"/>}
 
     </>
   );

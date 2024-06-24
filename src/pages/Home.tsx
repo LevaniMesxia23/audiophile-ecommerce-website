@@ -1,5 +1,5 @@
 import HomeMain from "../components/HomeMain";
-import SuggestItems from "../components/CategoryBoxes";
+import CategoryBoxes from "../components/CategoryBoxes";
 import Information from "../components/Information";
 import Footer from "../components/Footer";
 import SeeProducts from "../components/SeeProducts";
@@ -15,9 +15,9 @@ function Home() {
   const {show} = context
 
   return (
-    <div className={`${show ? "bg-black/40": null} min-h-full w-full`}>
+    <div>
       <HomeMain />
-      <SuggestItems className={`absolute-category-boxes`} />
+      <CategoryBoxes />
       <SeeProducts />
       <Information />
       <Footer />

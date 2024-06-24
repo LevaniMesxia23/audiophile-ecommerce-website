@@ -6,12 +6,14 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 
-function SuggestItems() {
+function CategoryBoxes() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
     <>
+    <div className="  w-full ">
+
     <div className="bg-white pb-10">
       <div className=" flex flex-col justify-center items-center">
         <div className="w-[23.4375rem] mt-20 relative flex justify-center">
@@ -82,8 +84,9 @@ function SuggestItems() {
         </div>
       </div>
     </div>
+    </div>
     </>
   );
 }
 
-export default SuggestItems;
+export default CategoryBoxes;
