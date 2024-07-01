@@ -3,13 +3,22 @@ import EarphonesImage from "../../public/assets/cart/image-removebg-preview(42).
 import SpeakersImage from "../../public/assets/cart/image-removebg-preview(38).png";
 import ArrowRight from "../../public/assets/shared/desktop/icon-arrow-right.svg";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
-
+import { useEffect, useContext } from "react";
+import { MyContext } from "../App";
 
 function CategoryBoxes() {
+  const context = useContext<MyContextType | null>(MyContext)
+  if(!context){
+    throw new Error("Header must be used within a MyContext.Provider")
+  }
+  const { setShow } = context
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleClick = () => {
+    setShow(false)
+  }
   return (
     <>
     <div className="  w-full ">
@@ -21,7 +30,7 @@ function CategoryBoxes() {
             <div className=" flex items-center justify-center flex-col gap-[1.06rem]">
               <span className=" mt-[5.5rem]">HEADPHONES</span>
               <div className=" flex items-center gap-[0.83rem] mb-[1.57rem]">
-                <Link to={"/headphones"}><span className=" text-black opacity-[0.5] cursor-pointer">SHOP</span></Link>
+                <Link to={"/headphones"} onClick={handleClick}><span className=" text-black opacity-[0.5] cursor-pointer">SHOP</span></Link>
                 <img
                   src={ArrowRight}
                   alt=""
@@ -44,7 +53,7 @@ function CategoryBoxes() {
             <div className=" flex items-center justify-center flex-col gap-[1.06rem]">
               <span className=" mt-[5.5rem]">SPEAKERS</span>
               <div className=" flex items-center gap-[0.83rem] mb-[1.57rem]">
-                <Link to={"/speakers"}><span className=" text-black opacity-[0.5] cursor-pointer">SHOP</span></Link>
+                <Link to={"/speakers"} onClick={handleClick}><span className=" text-black opacity-[0.5] cursor-pointer">SHOP</span></Link>
                 <img
                   src={ArrowRight}
                   alt=""
@@ -67,7 +76,7 @@ function CategoryBoxes() {
             <div className=" flex items-center justify-center flex-col gap-[1.06rem]">
               <span className=" mt-[5.5rem]">EARPHONES</span>
               <div className=" flex items-center gap-[0.83rem] mb-[1.57rem]">
-                <Link to={"/earphones"}><span className=" text-black opacity-[0.5] cursor-pointer">SHOP</span></Link>
+                <Link to={"/earphones"} onClick={handleClick}><span className=" text-black opacity-[0.5] cursor-pointer">SHOP</span></Link>
                 <img
                   src={ArrowRight}
                   alt=""
