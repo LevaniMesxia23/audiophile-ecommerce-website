@@ -1,6 +1,6 @@
 import React from 'react';
 import LastThreeComponents from "../components/LastThreeComponents";
-import Data from "../../starter-code/data.json";
+import Data from "../../public/data.json";
 
 const HeadPhones: React.FC = () => {
   const firstId = Data
