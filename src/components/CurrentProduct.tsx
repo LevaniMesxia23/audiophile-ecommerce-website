@@ -8,10 +8,10 @@ function CurrentProduct() {
   console.log(singleProduct?.image.desktop)
   return (
     <>
+      <div className=' px-6 pt-4'>
       <div>
-      <div>
-        <p>{singleProduct?.name}</p>
-        <picture>
+        <span className=' text-[0.9375rem] opacity-50 leanding-[1.5625rem]'>Go Back</span>
+        <picture className=' flex justify-center items-center mt-6 mb-8'>
           <source
             width="540px"
             height="560px"
@@ -20,13 +20,12 @@ function CurrentProduct() {
           />
           <source
             width="281px"
-            height=" 480px"
             media="(min-width:768px)"
             srcSet={singleProduct?.image.tablet}
           />
 
           <img
-            width=" 327px"
+            width="100%"
             height="327px"
             src={singleProduct?.image.mobile}
             alt="product"
@@ -34,11 +33,11 @@ function CurrentProduct() {
         </picture>
         <div>
           {singleProduct?.new ? (
-            <h3>NEW PRODUCT</h3>
+            <h3 className=' text-[#D87D4A] text-[0.875rem] tracking-[0.625rem]'>NEW PRODUCT</h3>
           ) : null}
-          <h2>{singleProduct?.name}</h2>
-          <p>{singleProduct?.description}</p>
-          <h3>0</h3>
+          <h2 className=' text-[1.75rem] mt-6 font-bold tracking-[0.625rem] uppercase '>{singleProduct?.name}</h2>
+          <p className=' text-[0.9375rem] landing-[1.5625rem] my-6 text-black/50'>{singleProduct?.description}</p>
+          <p className=' mb-[1.94rem] tracking-[0.08038rem] font-bold uppercase text-[1.125rem]'>$ {singleProduct?.price}</p>
         </div>
       </div>
       <div>
