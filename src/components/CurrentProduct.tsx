@@ -11,16 +11,17 @@ function CurrentProduct() {
       <div>
       <div>
         <p>{singleProduct?.name}</p>
-      <picture>
-          <img
+        <picture>
+          <source
             width="540px"
             height="560px"
-
+            media="(min-width:1440px)"
             srcSet={singleProduct?.image.desktop}
           />
-          <img
+          <source
             width="281px"
             height=" 480px"
+            media="(min-width:768px)"
             srcSet={singleProduct?.image.tablet}
           />
 
@@ -31,7 +32,6 @@ function CurrentProduct() {
             alt="product"
           />
         </picture>
-
         <div>
           {singleProduct?.new ? (
             <h3>NEW PRODUCT</h3>
