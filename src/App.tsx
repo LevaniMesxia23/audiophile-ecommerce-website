@@ -9,8 +9,8 @@ import './index.css';
 import CategoryBoxes from "./components/CategoryBoxes";
 import CurrentProduct from "./components/CurrentProduct";
 
-
 export const MyContext = createContext<MyContextType | null>(null);
+
 
 function App() {
   const [show, setShow] = useState<boolean>(false);

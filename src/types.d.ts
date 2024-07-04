@@ -1,7 +1,7 @@
 interface Image {
   mobile: string;
   tablet: string;
-  desktop: string;
+  desktop: string | undefined;
 }
 
 interface Product {

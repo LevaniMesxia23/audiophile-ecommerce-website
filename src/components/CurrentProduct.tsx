@@ -1,11 +1,10 @@
-import React from 'react'
 import data from "../../public/data.json"
 import { useLocation } from 'react-router-dom'
+import AlsoLike from "./AlsoLike"
 
 function CurrentProduct() {
   const location = useLocation()
   const singleProduct = data.find((item) => item.slug == location.pathname.slice(9))
-  console.log(singleProduct?.image.desktop)
   const formatedPrice = singleProduct?.price.toLocaleString()
   return (
     <>
@@ -57,7 +56,7 @@ function CurrentProduct() {
           <p className=' text-[ 0.9375rem] leading-[1.5625rem] text-black/50 whitespace-pre-line mb-[5.5rem]'>{singleProduct?.features}</p>
         </div>
 
-        <div>
+        <div  className=' mb-[5rem]'> 
           <h2 className=' text-[1.5rem] leanding-[2.25rem] font-bold tracking-[0.05356rem] mb-6'>IN THE BOX</h2>
           <div>
             {singleProduct?.includes.map((item, index) => (
@@ -69,6 +68,11 @@ function CurrentProduct() {
             
           </div>
         </div>
+        <div>
+          
+        </div>
+
+        <div className=" flex items-center flex-col justify-center">
         <picture>
           <source
             width="445px"
@@ -84,9 +88,9 @@ function CurrentProduct() {
           />
 
           <img
+            className=' rounded-lg mb-5'
             width="327px"
             height="174px"
-            className="child"
             src={singleProduct?.gallery.first.mobile}
             alt=""
           />
@@ -106,14 +110,13 @@ function CurrentProduct() {
           />
 
           <img
+            className=' rounded-lg mb-5'
             width=" 327px"
             height="174px"
-            className="child"
             src={singleProduct?.gallery.second.mobile}
             alt="product"
           />
         </picture>
-      </div>
 
       <picture>
         <source
@@ -121,24 +124,27 @@ function CurrentProduct() {
           height="592px"
           media="(min-width:1440px)"
           srcSet={singleProduct?.gallery.third.desktop}
-        />
+          />
 
         <source
           width="395px"
           height="368px"
           media="(min-width:768px)"
           srcSet={singleProduct?.gallery.third.tablet}
-        />
+          />
 
         <img
+          className=' rounded-lg'
           width="327px"
           height="368px"
-          className="child"
           src={singleProduct?.gallery.third.mobile}
           alt=""
-        />
+          />
       </picture>
       </div>
+      </div>
+    </div>
+      <AlsoLike />
     </>
 
   )

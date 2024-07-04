@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { MyContext } from "../App";
 import "../index.css"
 
+
 function Header() {
   const context = useContext(MyContext)
   
