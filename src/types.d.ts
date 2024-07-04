@@ -16,4 +16,6 @@ interface Product {
 interface MyContextType {
   show: boolean;
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
+  showCartBox: boolean;
+  setShowCartBox: React.Dispatch<React.SetStateAction<boolean>>;
 }

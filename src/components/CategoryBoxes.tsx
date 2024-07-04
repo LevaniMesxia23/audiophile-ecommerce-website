@@ -22,7 +22,6 @@ function CategoryBoxes() {
   return (
     <>
     <div className="  w-full ">
-
     <div className="bg-white pb-10">
       <div className=" flex flex-col justify-center items-center">
         <div className="w-[23.4375rem] mt-20 relative flex justify-center">

@@ -11,14 +11,14 @@ import CurrentProduct from "./components/CurrentProduct";
 
 export const MyContext = createContext<MyContextType | null>(null);
 
-
 function App() {
   const [show, setShow] = useState<boolean>(false);
+  const [showCartBox, setShowCartBox] = useState<boolean>(false);
 
   return (
     <>
     {show && <div className=" fixed h-screen w-screen z-40 bg-black/40 " onClick={() => setShow(!show)}></div>}
-      <MyContext.Provider value={{ show, setShow }}>
+      <MyContext.Provider value={{ show, setShow, showCartBox, setShowCartBox }}>
         <BrowserRouter>
         {show && <div className=" absolute z-50 left-0 bg-white top-[89px] w-full"><CategoryBoxes /></div>}
           <Header />
