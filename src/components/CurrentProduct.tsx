@@ -1,11 +1,17 @@
 import data from "../../public/data.json"
 import { useLocation } from 'react-router-dom'
 import AlsoLike from "./AlsoLike"
+import { useEffect } from "react"
 
 function CurrentProduct() {
   const location = useLocation()
   const singleProduct = data.find((item) => item.slug == location.pathname.slice(9))
   const formatedPrice = singleProduct?.price.toLocaleString()
+  console.log(location.pathname.slice(9))
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className=' px-6 pt-4'>
@@ -35,7 +41,7 @@ function CurrentProduct() {
           {singleProduct?.new ? (
             <h3 className=' text-[#D87D4A] text-[0.875rem] tracking-[0.625rem]'>NEW PRODUCT</h3>
           ) : null}
-          <h2 className=' text-[1.75rem] mt-6 font-bold tracking-[0.625rem] uppercase '>{singleProduct?.name}</h2>
+          <h2 className=' text-[1.75rem] mt-6 font-bold tracking-[0.250rem] uppercase '>{singleProduct?.name}</h2>
           <p className=' text-[0.9375rem] landing-[1.5625rem] my-6 text-black/50'>{singleProduct?.description}</p>
           <p className=' mb-[1.94rem] tracking-[0.08038rem] font-bold uppercase text-[1.125rem]'>$ {formatedPrice}</p>
         </div>

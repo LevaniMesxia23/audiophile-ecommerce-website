@@ -1,10 +1,16 @@
 import data from "../../public/data.json";
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import LastThreeComponents from "./LastThreeComponents";
+import { useEffect, useState } from "react";
 
 function AlsoLike() {
   const location = useLocation();
   const singleProduct = data.find((item) => item.slug === location.pathname.slice(9));
+  const [count, setCount] = useState(0)
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [count]);
 
   return (
     <>
@@ -31,9 +37,11 @@ function AlsoLike() {
                 className=" rounded-lg" />
             </picture>
             <h2 className="uppercase text-6 leanding-[2.25rem] font-bold tracking-[0.10713rem]">{item.name}</h2>
-            <button className="w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] mt-8 mb-[3.5rem]">
+            <Link to={`/current/${item.slug}`}>
+            <button onClick={() => setCount(count + 1)} className="w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] mt-8 mb-[3.5rem]">
               SEE PRODUCT
             </button>
+            </Link>
           </div>
         ))}
       </div>
