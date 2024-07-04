@@ -1,6 +1,7 @@
 import React from 'react';
 import LastThreeComponents from "../components/LastThreeComponents";
 import Data from "../../public/data.json";
+import { Link } from 'react-router-dom';
 
 const HeadPhones: React.FC = () => {
   const firstId = Data
@@ -26,9 +27,11 @@ const HeadPhones: React.FC = () => {
           <span className="text-[0.9375rem] text-black/50 max-w-[20.4375rem] text-center">
             {item.description}
           </span>
+          <Link to={`/current/${item.slug}`}>
           <button className="w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] mt-7">
             SEE PRODUCT
           </button>
+          </Link>
         </div>
       ))}
       <LastThreeComponents />
