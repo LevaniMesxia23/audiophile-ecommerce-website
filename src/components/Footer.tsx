@@ -10,9 +10,9 @@ function Footer() {
 
       <ul className=" uppercase flex justify-center items-center flex-col text-white text-[0.8125rem] font-bold gap-4">
         <Link to={"/"}><li>home</li></Link>
-        <Link to={"headphones"}><li>Headphones</li></Link>
-        <Link to={"speakers"}><li>Speakers</li></Link>
-        <Link to={"earphones"}><li>Earphones</li></Link>
+        <Link to={"/headphones"}><li>Headphones</li></Link>
+        <Link to={"/speakers"}><li>Speakers</li></Link>
+        <Link to={"/earphones"}><li>Earphones</li></Link>
       </ul>
 
       <span className=" text-center max-w-[20.4375rem] text-white/50 my-12">Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</span>

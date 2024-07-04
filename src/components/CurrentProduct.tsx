@@ -2,12 +2,13 @@ import data from "../../public/data.json"
 import { useLocation } from 'react-router-dom'
 import AlsoLike from "./AlsoLike"
 import { useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
 function CurrentProduct() {
   const location = useLocation()
   const singleProduct = data.find((item) => item.slug == location.pathname.slice(9))
   const formatedPrice = singleProduct?.price.toLocaleString()
-  console.log(location.pathname.slice(9))
+  const navigate = useNavigate()
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -16,7 +17,7 @@ function CurrentProduct() {
     <>
       <div className=' px-6 pt-4'>
       <div>
-        <span className=' text-[0.9375rem] opacity-50 leanding-[1.5625rem]'>Go Back</span>
+        <span className=' text-[0.9375rem] opacity-50 leanding-[1.5625rem]' onClick={() => navigate(-1)}>Go Back</span>
         <picture className=' flex justify-center items-center mt-6 mb-8'>
           <source
             width="540px"
