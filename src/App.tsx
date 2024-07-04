@@ -18,6 +18,7 @@ function App() {
   return (
     <>
     {show && <div className=" fixed h-screen w-screen z-40 bg-black/40 " onClick={() => setShow(!show)}></div>}
+    {showCartBox && <div className=" fixed h-screen w-screen z-40 bg-black/40 " onClick={() => setShowCartBox(!showCartBox)}></div>}
       <MyContext.Provider value={{ show, setShow, showCartBox, setShowCartBox }}>
         <BrowserRouter>
         {show && <div className=" absolute z-50 left-0 bg-white top-[89px] w-full"><CategoryBoxes /></div>}
