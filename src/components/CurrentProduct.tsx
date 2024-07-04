@@ -60,8 +60,8 @@ function CurrentProduct() {
         <div>
           <h2 className=' text-[1.5rem] leanding-[2.25rem] font-bold tracking-[0.05356rem] mb-6'>IN THE BOX</h2>
           <div>
-            {singleProduct?.includes.map(item => (
-              <div className=' flex gap-[1.31rem]'>
+            {singleProduct?.includes.map((item, index) => (
+              <div key={index} className=' flex gap-[1.31rem]'>
                 <span className=' text-[#D87D4A] text-[0.9375rem] font-bold leading-[1.5625rem]'>{item.quantity}x</span>
                 <span className='leading-[1.5625rem] text-[0.9375rem] text-black/50'>{item.item}</span>
               </div>
@@ -69,7 +69,75 @@ function CurrentProduct() {
             
           </div>
         </div>
+        <picture>
+          <source
+            width="445px"
+            height="280px"
+            media="(min-width:1440px)"
+            srcSet={singleProduct?.gallery.first.desktop}
+          />
+          <source
+            width="277px"
+            height="174px"
+            media="(min-width:768px)"
+            srcSet={singleProduct?.gallery.first.tablet}
+          />
+
+          <img
+            width="327px"
+            height="174px"
+            className="child"
+            src={singleProduct?.gallery.first.mobile}
+            alt=""
+          />
+        </picture>
+        <picture>
+          <source
+            width="445px"
+            height="280px"
+            media="(min-width:1440px)"
+            srcSet={singleProduct?.gallery.second.desktop}
+          />
+          <source
+            width="277px"
+            height="174px"
+            media="(min-width:768px)"
+            srcSet={singleProduct?.gallery.second.tablet}
+          />
+
+          <img
+            width=" 327px"
+            height="174px"
+            className="child"
+            src={singleProduct?.gallery.second.mobile}
+            alt="product"
+          />
+        </picture>
       </div>
+
+      <picture>
+        <source
+          width="635px"
+          height="592px"
+          media="(min-width:1440px)"
+          srcSet={singleProduct?.gallery.third.desktop}
+        />
+
+        <source
+          width="395px"
+          height="368px"
+          media="(min-width:768px)"
+          srcSet={singleProduct?.gallery.third.tablet}
+        />
+
+        <img
+          width="327px"
+          height="368px"
+          className="child"
+          src={singleProduct?.gallery.third.mobile}
+          alt=""
+        />
+      </picture>
       </div>
     </>
 
