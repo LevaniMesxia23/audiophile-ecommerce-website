@@ -44,9 +44,9 @@ function CurrentProduct() {
 
       <div className=' flex items-center w-full justify-center gap-4'>
         <div className=' py-[0.94rem] px-[0.97rem] min-w-[7.5rem] bg-[#F1F1F1] flex items-center justify-center gap-5 h-12'>
-          <span className=' text-black/25'>-</span>
+          <span className=' text-black/25 cursor-pointer'>-</span>
           <span>{1}</span>
-          <span className=' text-black/25'>+</span>
+          <span className=' text-black/25 cursor-pointer'>+</span>
         </div>
         <button className="w-full min-w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem]">ADD TO CART</button>
       </div>
@@ -54,11 +54,20 @@ function CurrentProduct() {
       <div>
         <div>
           <h2 className=' mt-[5.5rem] mb-6 text-[1.5rem] font-bold leading-[2.25rem] tracking-[0.05356rem]'>FEATURES</h2>
-          <p>{singleProduct?.features}</p>
+          <p className=' text-[ 0.9375rem] leading-[1.5625rem] text-black/50 whitespace-pre-line mb-[5.5rem]'>{singleProduct?.features}</p>
         </div>
 
         <div>
-          <h2>IN THE BOX</h2>
+          <h2 className=' text-[1.5rem] leanding-[2.25rem] font-bold tracking-[0.05356rem] mb-6'>IN THE BOX</h2>
+          <div>
+            {singleProduct?.includes.map(item => (
+              <div className=' flex gap-[1.31rem]'>
+                <span className=' text-[#D87D4A] text-[0.9375rem] font-bold leading-[1.5625rem]'>{item.quantity}x</span>
+                <span className='leading-[1.5625rem] text-[0.9375rem] text-black/50'>{item.item}</span>
+              </div>
+            ))}
+            
+          </div>
         </div>
       </div>
       </div>
