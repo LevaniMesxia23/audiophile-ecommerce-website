@@ -14,8 +14,8 @@ function CurrentProduct() {
   if (!context) {
     throw new Error("Header must be used within a MyContext.Provider");
   }
-  const { count, setCount, setItems } = context;
-  const [localCount, setLocalCount] = useState(1); 
+  const { setCount, setItems } = context;
+  const [localCount, setLocalCount] = useState(0); 
 
   const increment = () => {
     setLocalCount(localCount + 1);
@@ -36,14 +36,15 @@ function CurrentProduct() {
       setItems(prevItems => {
         const existingItemIndex = prevItems.findIndex(item => item.slug === singleProduct.slug);
         if (existingItemIndex >= 0) {
+          console.log(existingItemIndex)
           const updatedItems = [...prevItems];
-          updatedItems[existingItemIndex].quantity += localCount;
+          updatedItems[existingItemIndex].quantity = localCount;
           return updatedItems;
         } else {
           return [...prevItems, { ...singleProduct, quantity: localCount }];
         }
       });
-      setCount(count + localCount); 
+      setCount(localCount); 
     }
   };
 
