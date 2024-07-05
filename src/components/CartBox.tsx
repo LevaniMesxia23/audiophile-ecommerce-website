@@ -7,10 +7,22 @@ function CartBox() {
   if (!context) {
     throw new Error("Header must be used within a MyContext.Provider");
   }
-  const { items } = context;
+  const { items, localCount, setLocalCount } = context;
 
   const calculateTotal = () => {
     return items.reduce((total, item) => total + (item.price * item.quantity), 0).toLocaleString();
+  };
+
+  const increment = (item: Product) => {
+    setLocalCount(localCount + 1);
+    item.quantity += 1;
+  };
+
+  const decrement = (item: Product) => {
+    if (localCount > 1) {
+      setLocalCount(localCount - 1);
+      item.quantity -= 1;
+    }
   };
 
   return (
@@ -27,9 +39,9 @@ function CartBox() {
             <span className="leading-[1.5625rem] text-[0.875rem] font-bold opacity-50">$ {item.price.toLocaleString()}</span>
           </div>
           <div className='py-[0.94rem] px-[0.97rem] w-[6rem] ml-5 bg-[#F1F1F1] flex items-center justify-center gap-5 h-8'>
-            <span className='text-black/25 cursor-pointer'>-</span>
+            <span className='text-black/25 cursor-pointer' onClick={() => decrement(item)}>-</span>
             <span>{item.quantity}</span>
-            <span className='text-black/25 cursor-pointer'>+</span>
+            <span className='text-black/25 cursor-pointer' onClick={() => increment(item)}>+</span>
           </div>
         </div>
       ))}

@@ -14,7 +14,7 @@ function CurrentProduct() {
   if (!context) {
     throw new Error("Header must be used within a MyContext.Provider");
   }
-  const { setCount, setItems } = context;
+  const {  setCount, setItems, items } = context;
   const [localCount, setLocalCount] = useState(0); 
 
   const increment = () => {
@@ -30,6 +30,7 @@ function CurrentProduct() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+console.log(items);
 
   const addToCart = () => {
     if (singleProduct) {

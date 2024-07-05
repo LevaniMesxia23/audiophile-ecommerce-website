@@ -25,4 +25,6 @@ interface MyContextType {
   setCount: React.Dispatch<React.SetStateAction<number>>;
   items: Product[];
   setItems: React.Dispatch<React.SetStateAction<Product[]>>;
+  localCount: number;
+  setLocalCount: React.Dispatch<React.SetStateAction<number>>;
 }
