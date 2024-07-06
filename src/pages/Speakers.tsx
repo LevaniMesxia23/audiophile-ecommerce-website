@@ -3,7 +3,7 @@ import LastThreeComponents from "../components/LastThreeComponents";
 import Data from "../../public/data.json";
 
 const Speakers: React.FC = () => {
-  const firstId: Product[] = Data.slice(4).reverse() as Product[];
+  const firstId: Product[] = Data.slice(4).reverse() as unknown as Product[];
   return (
     <div>
       {firstId.map((item, index) => (

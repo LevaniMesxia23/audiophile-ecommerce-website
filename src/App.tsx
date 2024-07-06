@@ -18,7 +18,6 @@ function App() {
   const [items, setItems] = useState<Product[]>([])
   const [localCount, setLocalCount] = useState<number>(0);
 
-
   return (
     <>
     {show && <div className=" fixed h-screen w-screen z-40 bg-black/40 " onClick={() => setShow(!show)}></div>}
