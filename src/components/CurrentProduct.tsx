@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+
 import data from "../../public/data.json";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +6,7 @@ import { MyContext } from "../App";
 import AlsoLike from "./AlsoLike";
 
 function CurrentProduct() {
-  const location = useLocation();
+
   const singleProduct = data.find((item) => item.slug === location.pathname.slice(9));
   const formattedPrice = singleProduct?.price.toLocaleString();
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ function CurrentProduct() {
   if (!context) {
     throw new Error("Header must be used within a MyContext.Provider");
   }
-  const {  setCount, setItems, items } = context;
+  const { setCount, setItems, items } = context;
   const [localCount, setLocalCount] = useState(0); 
 
   const increment = () => {
@@ -48,6 +48,7 @@ console.log(items);
       setCount(localCount); 
     }
   };
+  
 
   return (
     <>

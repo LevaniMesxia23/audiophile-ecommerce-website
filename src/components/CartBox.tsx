@@ -1,13 +1,13 @@
-
 import { useContext } from "react";
 import { MyContext } from "../App";
+import { Link } from "react-router-dom";
 
 function CartBox() {
   const context = useContext(MyContext);
   if (!context) {
     throw new Error("Header must be used within a MyContext.Provider");
   }
-  const { items, localCount, setLocalCount } = context;
+  const { items, localCount, setLocalCount, count } = context;
 
   const calculateTotal = () => {
     return items.reduce((total, item) => total + (item.price * item.quantity), 0).toLocaleString();
@@ -50,7 +50,7 @@ function CartBox() {
         <span className="leading-[1.5625rem] text-[0.9375rem] opacity-50">TOTAL</span>
         <span className="text-[1.125rem] font-bold">$ {calculateTotal()}</span>
       </div>
-      <button className="w-full min-w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] mt-6">CHECKOUT</button>
+      {count > 0 ? (<Link to={"/Checkout"}><button className="w-full min-w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] mt-6">CHECKOUT</button></Link>): null}
     </div>
   );
 }
