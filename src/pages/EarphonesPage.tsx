@@ -1,5 +1,6 @@
 import LastThreeComponents from "../components/LastThreeComponents";
 import Data from "../../public/data.json";
+import { Link } from "react-router-dom";
 
 function EarphonesPage() {
   const FirstId = Data[0];
@@ -27,9 +28,9 @@ function EarphonesPage() {
             even in noisy environments with its active noise cancellation
             feature.
           </span>
-          <button className="w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] mt-7 ">
+          <Link to={"/current/yx1-earphones"}><button className="w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] mt-7 ">
             SEE PRODUCT
-          </button>
+          </button></Link>
         </div>
       )}
       <LastThreeComponents />
