@@ -7,7 +7,7 @@ function CartBox() {
   if (!context) {
     throw new Error("Header must be used within a MyContext.Provider");
   }
-  const { items, localCount, setLocalCount, count, setShowCartBox } = context;
+  const { items, localCount, setLocalCount,  setShowCartBox,setItems } = context;
 
   const calculateTotal = () => {
     return items.reduce((total, item) => total + (item.price * item.quantity), 0).toLocaleString();
@@ -27,11 +27,18 @@ function CartBox() {
 
   const handleButtonClick = () => setShowCartBox(false)
 
+  const handleRemove = () => {
+    setItems(() => {
+      return [];
+    });
+  }
+  
+
   return (
     <div className='absolute w-[20.4375rem] bg-white flex flex-col items-center justify-center right-[1.5rem] top-[109px] px-7 py-8 z-50 rounded-[0.5rem]'>
       <div className="flex justify-between items-center w-full mb-[1.94rem]">
         <span className="text-[1.125rem] font-bold tracking-[0.08038rem] uppercase">cart ({items.length})</span>
-        <span className="leading-[1.5625rem] underline opacity-50 cursor-pointer">Remove all</span>
+        <span className="leading-[1.5625rem] underline opacity-50 cursor-pointer" onClick={handleRemove}>Remove all</span>
       </div>
       {items.map((item, index) => (
         <div key={index} className="flex items-center justify-between w-full mb-4">
@@ -52,7 +59,7 @@ function CartBox() {
         <span className="leading-[1.5625rem] text-[0.9375rem] opacity-50">TOTAL</span>
         <span className="text-[1.125rem] font-bold">$ {calculateTotal()}</span>
       </div>
-      {count > 0 ? (<Link to={"/Checkout"}><button onClick={handleButtonClick} className="w-full min-w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] mt-6">CHECKOUT</button></Link>): null}
+      {items.length > 0 ? (<Link to={"/Checkout"}><button onClick={handleButtonClick} className="w-full min-w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] mt-6">CHECKOUT</button></Link>): null}
     </div>
   );
 }
