@@ -20,6 +20,7 @@ function App() {
 
   return (
     <>
+
     {show && <div className=" fixed h-screen w-screen z-40 bg-black/40 " onClick={() => setShow(!show)}></div>}
     {showCartBox && <div className=" fixed h-screen w-screen z-40 bg-black/40 " onClick={() => setShowCartBox(!showCartBox)}></div>}
       <MyContext.Provider value={{ show, setShow, showCartBox, setShowCartBox, count, setCount, items, setItems, localCount, setLocalCount  }}>

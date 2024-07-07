@@ -2,11 +2,17 @@ import React from 'react';
 import LastThreeComponents from "../components/LastThreeComponents";
 import Data from "../../public/data.json";
 import { Link } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 const Speakers: React.FC = () => {
   const firstId: Product[] = Data.slice(4).reverse() as unknown as Product[];
   return (
     <div>
+      <HelmetProvider>
+      <Helmet>
+        <title>Speakers</title>
+      </Helmet>
+      </HelmetProvider>
       {firstId.map((item, index) => (
         <div key={index} className="flex items-center justify-center flex-col mb-[6.5rem]">
           {item.id === 5 ? null : <div className="bg-black py-8 w-screen flex items-center justify-center uppercase text-[1.75rem] leading-[0.125rem] -mt-1 mb-16">

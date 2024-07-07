@@ -2,12 +2,18 @@ import React from 'react';
 import LastThreeComponents from "../components/LastThreeComponents";
 import Data from "../../public/data.json";
 import { Link } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 const HeadPhones: React.FC = () => {
   const firstId = Data
   const filtered = firstId.filter(item => item.category === "headphones")
   return (
     <div>
+      <HelmetProvider>
+      <Helmet>
+        <title>Headphones</title>
+      </Helmet>
+      </HelmetProvider>
       {filtered.length > 0 && (<div className="bg-black py-8 w-screen flex items-center justify-center uppercase text-[1.75rem] leading-[0.125rem] -mt-1 mb-16">
         <p className="text-white">{filtered[0].category}</p>
       </div>)}

@@ -1,11 +1,17 @@
 import LastThreeComponents from "../components/LastThreeComponents";
 import Data from "../../public/data.json";
 import { Link } from "react-router-dom";
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 function EarphonesPage() {
   const FirstId = Data[0];
   return (
     <div>
+      <HelmetProvider>
+      <Helmet>
+        <title>Earphones</title>
+      </Helmet>
+      </HelmetProvider>
       {FirstId && (
         <div className=" flex items-center justify-center flex-col mb-[6.5rem]">
           <div className=" bg-black py-8 w-screen flex items-center justify-center uppercase text-[1.75rem] leadin-[0.125rem] -mt-1 mb-16">
