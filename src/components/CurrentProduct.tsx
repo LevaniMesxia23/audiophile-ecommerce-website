@@ -1,6 +1,6 @@
 
 import data from "../../public/data.json";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { MyContext } from "../App";
 import AlsoLike from "./AlsoLike";
@@ -14,8 +14,7 @@ function CurrentProduct() {
   if (!context) {
     throw new Error("Header must be used within a MyContext.Provider");
   }
-  const { setCount, setItems, items } = context;
-  const [localCount, setLocalCount] = useState(0); 
+  const { setCount, setItems, localCount, setLocalCount } = context;
 
   const increment = () => {
     setLocalCount(localCount + 1);
@@ -30,14 +29,12 @@ function CurrentProduct() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-console.log(items);
 
   const addToCart = () => {
-    if (singleProduct) {
+    if (singleProduct && localCount > 0) {
       setItems(prevItems => {
         const existingItemIndex = prevItems.findIndex(item => item.slug === singleProduct.slug);
         if (existingItemIndex >= 0) {
-          console.log(existingItemIndex)
           const updatedItems = [...prevItems];
           updatedItems[existingItemIndex].quantity = localCount;
           return updatedItems;

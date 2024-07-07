@@ -31,6 +31,7 @@ function CartBox() {
     setItems(() => {
       return [];
     });
+    setLocalCount(0)
   }
   
 
