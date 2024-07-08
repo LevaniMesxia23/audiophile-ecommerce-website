@@ -8,6 +8,7 @@ import HeadPhones from "./pages/HeadPhones";
 import './index.css';
 import CategoryBoxes from "./components/CategoryBoxes";
 import CurrentProduct from "./components/CurrentProduct";
+import Checkout from "./pages/Checkout";
 
 export const MyContext = createContext<MyContextType | null>(null);
 
@@ -33,6 +34,7 @@ function App() {
             <Route path="/speakers" element={<Speakers />} />
             <Route path="/headphones" element={<HeadPhones />} />
             <Route path={"/current/:name"} element={<CurrentProduct />} />
+            <Route path="/Checkout" element={<Checkout />} />
           </Routes>
         </BrowserRouter>
       </MyContext.Provider>
