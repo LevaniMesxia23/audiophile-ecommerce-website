@@ -5,7 +5,7 @@ function Checkout() {
   return (
     <div className='px-6 pt-4 bg-[#FAFAFA]'>
       <span className='text-[0.9375rem] opacity-50 leading-[1.5625rem]' onClick={() => navigate(-1)}>Go Back</span>
-      <div className=" bg-white rounded-[0.5rem] mt-6">
+      <div className=" bg-white rounded-[0.5rem] mt-6 mb-8 pb-[1.94rem]">
 
       <div className=" p-6 flex flex-col items-start justify-center">
         <span className=" text-[1.75rem] tracking-[0.0625rem] font-bold mb-8">CHECKOUT</span>
@@ -82,8 +82,21 @@ function Checkout() {
         </div>
 
         </div>
+
+        <div className=" w-full">
+
+        <div className=" gap-[0.56rem] flex flex-col mt-8">
+          <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">e-Money Number</span>
+          <input className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="238521993" type="text" />
+        </div>
+        <div className=" gap-[0.56rem] flex flex-col mt-6">
+          <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">e-Money PIN</span>
+          <input className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="6891" type="text" />
+        </div>
+        </div>
       </div>
       </div>
+
     </div>
   )
 }
