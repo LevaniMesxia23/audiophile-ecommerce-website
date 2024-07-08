@@ -54,13 +54,36 @@ function Checkout() {
           <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">Country</span>
           <input className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="United States" type="text" />
         </div>
-
         </div>
 
-      </div>
-      </div>
 
-      
+      </div>
+        <div className=" p-6 flex flex-col items-start justify-center">
+        <span className=" text-[#D87D4A] text-[0.8125rem] leading-[1.5625rem] tracking-[0.05806rem] font-bold uppercase mb-4">payment details</span>
+
+        <div className=" flex flex-col gap-4 w-full">
+        <div className=" gap-[0.56rem] flex flex-col">
+          <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">Payment Method</span>
+          <div className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 flex items-center gap-4">
+            <div className=" w-5 h-5 border-[0.0625rem] border-[#CFCFCF] rounded-[50%] flex items-center justify-center">
+              <div className="w-[0.625rem] h-[0.625rem] border-none border-[#CFCFCF] rounded-[50%] bg-[#D87D4A]"></div>
+            </div>
+              <span>e-Money</span>
+          </div>
+        </div>
+
+        <div className=" gap-[0.56rem] flex flex-col">
+          <div className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 flex items-center gap-4">
+            <div className=" w-5 h-5 border-[0.0625rem] border-[#CFCFCF] rounded-[50%] flex items-center justify-center">
+              <div className="w-[0.625rem] h-[0.625rem] border-none border-[#CFCFCF] rounded-[50%] bg-[#D87D4A]"></div>
+            </div>
+              <span>Cash on Delivery</span>
+          </div>
+        </div>
+
+        </div>
+      </div>
+      </div>
     </div>
   )
 }
