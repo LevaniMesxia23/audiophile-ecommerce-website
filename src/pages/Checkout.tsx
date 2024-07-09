@@ -1,9 +1,19 @@
 import { useNavigate } from "react-router-dom"
-
+import { useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import loginSchema from "../loginSchema"
+import InputMask from "react-input-mask"
 function Checkout() {
+  const {register, handleSubmit, formState: {errors},} = useForm({
+    resolver: yupResolver(loginSchema)
+  })
+  const onSubmit = async (data: unknown) => {
+    console.log(data);
+    
+  }
   const navigate = useNavigate()
   return (
-    <div className='px-6 pt-4 bg-[#FAFAFA]'>
+    <form onSubmit={handleSubmit(onSubmit)} className='px-6 pt-4 bg-[#FAFAFA]'>
       <span className='text-[0.9375rem] opacity-50 leading-[1.5625rem]' onClick={() => navigate(-1)}>Go Back</span>
       <div className=" bg-white rounded-[0.5rem] mt-6 mb-8 pb-[1.94rem]">
 
@@ -14,17 +24,26 @@ function Checkout() {
         <div className=" flex flex-col gap-4 w-full">
         <div className=" gap-[0.56rem] flex flex-col">
           <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">Name</span>
-          <input className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="Alexei Ward" type="text" />
+          <input {...register("name")} className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="Alexei Ward" type="text" />
+          {errors.name && <p className="text-[#CD2C2C]">{errors.name.message}</p>}
         </div>
 
         <div className=" gap-[0.56rem] flex flex-col">
           <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">Email Address</span>
-          <input className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="alexei@mail.com" type="text" />
+          <input {...register("email")} className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="alexei@mail.com" type="text" />
+          {errors.email && <p className="text-[#CD2C2C]">{errors.email.message}</p>}
         </div>
 
         <div className=" gap-[0.56rem] flex flex-col">
           <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">Phone Number</span>
-          <input className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="+1 202-555-0136" type="number" />
+          <InputMask className="border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]"
+            {...register("phoneNumber")}
+            id="phoneNumber"
+            mask="+1 999-999-9999"
+            placeholder="+1 202-555-0136"
+            maskChar={""}
+          />
+          {errors.phoneNumber && <p className="text-[#CD2C2C]">{errors.phoneNumber.message}</p>}
         </div>
 
         </div>
@@ -97,7 +116,11 @@ function Checkout() {
       </div>
       </div>
 
+    <div className=" w-full flex items-center justify-center">
+
+    <button type="submit" className=" w-[17.4375rem] h-12 bg-[#D87D4A] text-white font-bold text-[0.8125rem] leading-[0.0625rem] uppercase">CONTINUE & PAY</button>
     </div>
+    </form>
   )
 }
 
