@@ -17,6 +17,11 @@ const loginSchema = yup.object().shape({
   phoneNumber: yup
   .string().required("Phone Number is required")
   .min(15, "Number must be 15 characters"),
+  address: yup
+  .string().required("Address is required"),
+  zipCode: yup
+  .string().required("ZipCode is required")
+  .min(5, "ZipCode must be 5 number")
 })
 
 export default loginSchema 

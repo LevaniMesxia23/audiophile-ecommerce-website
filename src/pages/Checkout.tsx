@@ -56,12 +56,14 @@ function Checkout() {
         <div className=" flex flex-col gap-4 w-full">
         <div className=" gap-[0.56rem] flex flex-col">
           <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">Your Address</span>
-          <input className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="1137 Williams Avenue" type="text" />
+          <input {...register("address")} className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="1137 Williams Avenue" type="text" />
+          {errors.address && <p className="text-[#CD2C2C]">{errors.address.message}</p>}
         </div>
 
         <div className=" gap-[0.56rem] flex flex-col">
           <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">ZIP Code</span>
-          <input className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="10001" type="text" />
+          <input {...register("zipCode")} className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="10001" type="number" />
+          {errors.zipCode && <p className="text-[#CD2C2C]">{errors.zipCode.message}</p>}
         </div>
 
         <div className=" gap-[0.56rem] flex flex-col">
