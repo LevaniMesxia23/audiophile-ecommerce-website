@@ -113,12 +113,13 @@ function Checkout() {
         {!showCash && <div className=" w-full">
 
         <div className=" gap-[0.56rem] flex flex-col mt-8">
-          <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">e-Money Number</span>
-          <input className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="238521993" type="text" />
+          <span className={` ${getErrorText(errors.emoneyNum)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>e-Money Number</span>
+          <input {...register("emoneyNum")} className={` ${getInputClassName(errors.emoneyNum)} border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="238521993" type="number" />
+          {errors.emoneyNum && <p className="text-[#CD2C2C]">{errors.emoneyNum.message}</p>}
         </div>
         <div className=" gap-[0.56rem] flex flex-col mt-6">
           <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">e-Money PIN</span>
-          <input className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="6891" type="text" />
+          <input className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="6891" type="number" />
         </div>
         </div>}
         {showCash && <div className=" flex gap-8 items-center mt-[1.88rem]">
