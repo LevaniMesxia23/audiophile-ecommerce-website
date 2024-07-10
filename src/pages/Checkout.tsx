@@ -65,20 +65,20 @@ function Checkout() {
         </div>
 
         <div className=" gap-[0.56rem] flex flex-col">
-          <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">ZIP Code</span>
-          <input {...register("zipCode")} className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="10001" type="number" />
+          <span className={` ${getErrorText(errors.zipCode)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>ZIP Code</span>
+          <input {...register("zipCode")} className={` ${getInputClassName(errors.zipCode)} border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="10001" type="number" />
           {errors.zipCode && <p className="text-[#CD2C2C]">{errors.zipCode.message}</p>}
         </div>
 
         <div className=" gap-[0.56rem] flex flex-col">
-          <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">City</span>
-          <input {...register("city")} className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="New York" type="text" />
+          <span className={` ${getErrorText(errors.city)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>City</span>
+          <input {...register("city")} className={` ${getInputClassName(errors.city)} border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="New York" type="text" />
           {errors.city && <p className="text-[#CD2C2C]">{errors.city.message}</p>}
         </div>
 
         <div className=" gap-[0.56rem] flex flex-col">
-          <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">Country</span>
-          <input {...register("country")} className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="United States" type="text" />
+          <span className={`${getErrorText(errors.country)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>Country</span>
+          <input {...register("country")} className={` ${getInputClassName(errors.country)} border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="United States" type="text" />
           {errors.country && <p className="text-[#CD2C2C]">{errors.country.message}</p>}
         </div>
         </div>
