@@ -34,14 +34,14 @@ function Checkout() {
         </div>
 
         <div className=" gap-[0.56rem] flex flex-col">
-          <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">Email Address</span>
-          <input {...register("email")} className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="alexei@mail.com" type="text" />
+          <span className={`${getErrorText(errors.email)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>Email Address</span>
+          <input {...register("email")} className={`${getInputClassName(errors.email)} border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="alexei@mail.com" type="text" />
           {errors.email && <p className="text-[#CD2C2C]">{errors.email.message}</p>}
         </div>
 
         <div className=" gap-[0.56rem] flex flex-col">
-          <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">Phone Number</span>
-          <InputMask className="border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]"
+          <span className={` ${getErrorText(errors.phoneNumber)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>Phone Number</span>
+          <InputMask className={` ${getInputClassName(errors.phoneNumber)} border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`}
             {...register("phoneNumber")}
             id="phoneNumber"
             mask="+1 999-999-9999"
@@ -52,7 +52,6 @@ function Checkout() {
         </div>
 
         </div>
-
       </div>
 
       <div className=" p-6 flex flex-col items-start justify-center">
