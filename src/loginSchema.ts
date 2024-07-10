@@ -8,7 +8,7 @@ const loginSchema = yup.object().shape({
     "includes space",
     "Please enter full name",
     (a) => {
-      return a?.includes(" ")
+      return a && a.includes(" ") && a.trim().split(" ")[1]
     }
   ), 
   email: yup
@@ -21,7 +21,9 @@ const loginSchema = yup.object().shape({
   .string().required("Address is required"),
   zipCode: yup
   .string().required("ZipCode is required")
-  .min(5, "ZipCode must be 5 number"),
+  .matches(/^[0-9]+$/, "Must be only digits")
+  .min(5, "ZipCode must be 5 number")
+  .max(5, "ZipCode must be 5 number"),
   city: yup.string().required("City is required"),
   country: yup.string().required("Country is required"),
 })

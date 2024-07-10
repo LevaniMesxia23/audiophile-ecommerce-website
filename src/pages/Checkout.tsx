@@ -11,10 +11,12 @@ function Checkout() {
   })
   const onSubmit = async (data: unknown) => {
     console.log(data);
-    
   }
   const navigate = useNavigate()
   const [showCash, setShowCash] = useState(true)
+
+  const getInputClassName = (error) => error ? "border-[#CD2C2C] && border-[2px]" : "border-[#CFCFCF]";
+  const getErrorText = (error) => error ? "text-[#CD2C2C]" : "text-black";
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='px-6 pt-4 bg-[#FAFAFA]'>
       <span className='text-[0.9375rem] opacity-50 leading-[1.5625rem]' onClick={() => navigate(-1)}>Go Back</span>
@@ -25,9 +27,9 @@ function Checkout() {
         <span className=" text-[#D87D4A] text-[0.8125rem] leading-[1.5625rem] tracking-[0.05806rem] font-bold uppercase mb-4">Billing details</span>
 
         <div className=" flex flex-col gap-4 w-full">
-        <div className=" gap-[0.56rem] flex flex-col">
-          <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">Name</span>
-          <input {...register("name")} className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]" placeholder="Alexei Ward" type="text" />
+        <div className="gap-[0.56rem] flex flex-col">
+          <span className={`${getErrorText(errors.name)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>Name</span>
+          <input {...register("name")} className={`border-[0.0625rem] ${getInputClassName(errors.name)} w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="Alexei Ward" type="text" />
           {errors.name && <p className="text-[#CD2C2C]">{errors.name.message}</p>}
         </div>
 
