@@ -29,6 +29,7 @@ function CartBox() {
 
   const handleRemove = () => {
     setItems(() => {
+      localStorage.removeItem("count");
       return [];
     });
     setLocalCount(0)

@@ -14,7 +14,7 @@ function CurrentProduct() {
   if (!context) {
     throw new Error("Header must be used within a MyContext.Provider");
   }
-  const { setCount, setItems, localCount, setLocalCount } = context;
+  const { items, setCount, setItems, localCount, setLocalCount, count } = context;
 
   const increment = () => {
     setLocalCount(localCount + 1);
@@ -29,6 +29,19 @@ function CurrentProduct() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    if(items.length !== 0){
+      localStorage.setItem("count", JSON.stringify(items));
+    }
+  }, [count, localCount])
+
+  useEffect(()=>{
+    if(localStorage.getItem("count")){
+      setItems(JSON.parse(localStorage.getItem("count")as string))
+    }
+  }, [])
+  
 
   const addToCart = () => {
     if (singleProduct && localCount > 0) {
@@ -46,7 +59,6 @@ function CurrentProduct() {
     }
   };
   
-
   return (
     <>
       <div className='px-6 pt-4'>
