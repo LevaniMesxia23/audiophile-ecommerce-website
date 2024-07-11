@@ -7,16 +7,14 @@ const loginSchema = yup.object().shape({
   .test(
     "includes space",
     "Please enter full name",
-    (a) => {
-      return a && a.includes(" ") && a.trim().split(" ")[1]
-    }
+    (a) => a ? a.includes(" ") && Boolean(a.trim().split(" ")[1]) : false
   ), 
   email: yup
   .string().required("Email address is required")
   .matches(emailRegex, 'Invalid email address'),
   phoneNumber: yup
   .string().required("Phone Number is required")
-  .min(15, "Number must be 15 characters"),
+  .min(18, "Number must be 15 characters"),
   address: yup
   .string().required("Address is required"),
   zipCode: yup

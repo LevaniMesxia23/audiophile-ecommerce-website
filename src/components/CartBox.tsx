@@ -34,7 +34,6 @@ function CartBox() {
     setLocalCount(0)
   }
   
-
   return (
     <div className='absolute w-[20.4375rem] bg-white flex flex-col items-center justify-center right-[1.5rem] top-[109px] px-7 py-8 z-50 rounded-[0.5rem]'>
       <div className="flex justify-between items-center w-full mb-[1.94rem]">
