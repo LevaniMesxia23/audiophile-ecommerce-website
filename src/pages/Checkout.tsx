@@ -6,6 +6,7 @@ import { InputMask } from '@react-input/mask';
 import { useState } from "react"
 import Shape from "../../public/Shape.svg"
 import Summary from "../components/Summary"
+import Footer from "../components/Footer";
 function Checkout() {
   const {register, handleSubmit, formState: {errors}, control} = useForm({
     resolver: yupResolver(loginSchema)
@@ -19,6 +20,7 @@ function Checkout() {
   const getInputClassName = (error: FieldError | undefined) => error ? "border-[#CD2C2C] && border-[2px]" : "border-[#CFCFCF]";
   const getErrorText = (error: FieldError | undefined) => error ? "text-[#CD2C2C]" : "text-black";
   return (
+    <>
     <form onSubmit={handleSubmit(onSubmit)} className='px-6 pt-4 bg-[#FAFAFA]'>
       <span className='text-[0.9375rem] opacity-50 leading-[1.5625rem]' onClick={() => navigate(-1)}>Go Back</span>
       <div className=" bg-white rounded-[0.5rem] mt-6 mb-8 pb-[1.94rem]">
@@ -141,6 +143,8 @@ function Checkout() {
     <Summary />
     </div>
     </form>
+    <Footer />
+    </>
   )
 }
 
