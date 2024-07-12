@@ -6,7 +6,7 @@ function Summary() {
   if (!context) {
     throw new Error("Summary must be used within a MyContext.Provider");
   }
-  const { items, localCount } = context;
+  const { items } = context;
 
   const calculateVAT = (price: number) => {
     return (price * 0.2).toFixed(2);
@@ -17,8 +17,10 @@ function Summary() {
   };
 
   const calculateGrandTotal = (items: Product[]) => {
-    return items.reduce((total: number, item: { price: number; }) => {
-      const itemTotalWithVAT = calculateTotalWithVAT(item.price * localCount);
+    return items.reduce((total: number, item: {
+      quantity: number; price: number; 
+}) => {
+      const itemTotalWithVAT = calculateTotalWithVAT(item.price * item.quantity);
       return total + parseFloat(itemTotalWithVAT) + 50; 
     }, 0).toLocaleString();
   };
@@ -36,13 +38,13 @@ function Summary() {
                 <span className="leading-[1.5625rem] text-[0.875rem] font-bold opacity-50">$ {item.price.toLocaleString()}</span>
               </div>
             </div>
-            <span>x{localCount}</span>
+            <span>x{item.quantity}</span>
           </div>
         ))}
         <div className=" flex flex-col gap-2">
           <div className="flex justify-between">
             <span className="text-[0.9375rem] leading-[1.5625rem] opacity-50">TOTAL</span>
-            <span className="text-[1.125rem] font-bold">$ {(items.reduce((total, item) => total + item.price * localCount, 0)).toLocaleString()}</span>
+            <span className="text-[1.125rem] font-bold">$ {(items.reduce((total, item) => total + item.price * item.quantity, 0)).toLocaleString()}</span>
           </div>
           <div className="flex justify-between">
             <span className="text-[0.9375rem] leading-[1.5625rem] opacity-50">SHIPPING</span>
@@ -50,7 +52,7 @@ function Summary() {
           </div>
           <div className="flex justify-between">
             <span className="text-[0.9375rem] leading-[1.5625rem] opacity-50">VAT (20%)</span>
-            <span className="text-[1.125rem] font-bold">$ {items.reduce((total, item) => total + parseFloat(calculateVAT(item.price * localCount)), 0).toFixed(2)}</span>
+            <span className="text-[1.125rem] font-bold">$ {items.reduce((total, item) => total + parseFloat(calculateVAT(item.price * item.quantity)), 0).toFixed(2)}</span>
           </div>
           <div className="flex justify-between">
             <span className="text-[0.9375rem] leading-[1.5625rem] opacity-50">GRAND TOTAL</span>

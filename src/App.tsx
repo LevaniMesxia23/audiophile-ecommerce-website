@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import EarphonesPage from "./pages/EarphonesPage";
@@ -19,6 +19,12 @@ function App() {
   const [count, setCount] = useState<number>(0)
   const [items, setItems] = useState<Product[]>([])
   const [localCount, setLocalCount] = useState<number>(0);
+
+  useEffect(()=>{
+    if(localStorage.getItem("count")){
+      setItems(JSON.parse(localStorage.getItem("count")as string))
+    }
+  }, [])
 
   return (
     <>

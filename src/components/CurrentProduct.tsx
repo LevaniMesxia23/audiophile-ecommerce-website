@@ -35,14 +35,7 @@ function CurrentProduct() {
       localStorage.setItem("count", JSON.stringify(items));
     }
   }, [count, localCount])
-
-  useEffect(()=>{
-    if(localStorage.getItem("count")){
-      setItems(JSON.parse(localStorage.getItem("count")as string))
-    }
-  }, [])
   
-
   const addToCart = () => {
     if (singleProduct && localCount > 0) {
       setItems(prevItems => {

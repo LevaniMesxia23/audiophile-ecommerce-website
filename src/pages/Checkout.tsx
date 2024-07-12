@@ -1,24 +1,37 @@
-import { useNavigate } from "react-router-dom"
-import { FieldError, useForm, Controller } from "react-hook-form"
-import { yupResolver } from "@hookform/resolvers/yup"
-import loginSchema from "../loginSchema"
+import { useNavigate } from "react-router-dom";
+import { FieldError, useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import loginSchema from "../loginSchema";
 import { InputMask } from '@react-input/mask';
-import { useState } from "react"
-import Shape from "../../public/Shape.svg"
-import Summary from "../components/Summary"
+import { useEffect, useState } from "react";
+import Shape from "../../public/Shape.svg";
+import Summary from "../components/Summary";
 import Footer from "../components/Footer";
+
 function Checkout() {
-  const {register, handleSubmit, formState: {errors}, control} = useForm({
-    resolver: yupResolver(loginSchema)
-  })
+  const [showCash, setShowCash] = useState(true);
+  const navigate = useNavigate();
+  const { register, handleSubmit, formState: { errors }, control, reset } = useForm({
+    resolver: yupResolver(loginSchema),
+    defaultValues: {
+      showCash: showCash
+    }
+  });
+
+  useEffect(() => {
+    reset({
+      showCash: showCash,
+    });
+  }, [showCash]);
+
   const onSubmit = async (data: unknown) => {
     console.log(data);
-  }
-  const navigate = useNavigate()
-  const [showCash, setShowCash] = useState(true)
+      navigate("/Summary");
+  };
 
-  const getInputClassName = (error: FieldError | undefined) => error ? "border-[#CD2C2C] && border-[2px]" : "border-[#CFCFCF]";
+  const getInputClassName = (error: FieldError | undefined) => error ? "border-[#CD2C2C] border-[2px]" : "border-[#CFCFCF]";
   const getErrorText = (error: FieldError | undefined) => error ? "text-[#CD2C2C]" : "text-black";
+
   return (
     <>
     <form onSubmit={handleSubmit(onSubmit)} className='px-6 pt-4 bg-[#FAFAFA]'>
@@ -92,7 +105,6 @@ function Checkout() {
         </div>
         </div>
 
-
       </div>
         <div className=" p-6 flex flex-col items-start justify-center">
         <span className=" text-[#D87D4A] text-[0.8125rem] leading-[1.5625rem] tracking-[0.05806rem] font-bold uppercase mb-4">payment details</span>
@@ -100,7 +112,7 @@ function Checkout() {
         <div className=" flex flex-col gap-4 w-full">
         <div className=" gap-[0.56rem] flex flex-col">
           <span className=" text-[0.75rem] font-bold -tracking-[0.01563rem]">Payment Method</span>
-          <div onClick={() => setShowCash(!showCash)} className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 flex items-center gap-4">
+          <div onClick={() => setShowCash(false)} className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 flex items-center gap-4">
             <div className=" w-5 h-5 border-[0.0625rem] border-[#CFCFCF] rounded-[50%] flex items-center justify-center">
             {!showCash && <div className="w-[0.625rem] h-[0.625rem] border-none border-[#CFCFCF] rounded-[50%] bg-[#D87D4A]"></div>}
             </div>
@@ -109,18 +121,16 @@ function Checkout() {
         </div>
 
         <div className=" gap-[0.56rem] flex flex-col">
-          <div onClick={() => setShowCash(!showCash)} className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 flex items-center gap-4">
+          <div onClick={() => setShowCash(true)} className=" border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 flex items-center gap-4">
             <div className=" w-5 h-5 border-[0.0625rem] border-[#CFCFCF] rounded-[50%] flex items-center justify-center">
               {showCash && <div className="w-[0.625rem] h-[0.625rem] border-none border-[#CFCFCF] rounded-[50%] bg-[#D87D4A]"></div>}
             </div>
               <span>Cash on Delivery</span>
           </div>
         </div>
-
         </div>
 
         {!showCash && <div className=" w-full">
-
         <div className=" gap-[0.56rem] flex flex-col mt-8">
           <span className={` ${getErrorText(errors.emoneyNum)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>e-Money Number</span>
           <input {...register("emoneyNum")} className={` ${getInputClassName(errors.emoneyNum)} border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="238521993" type="number" />
