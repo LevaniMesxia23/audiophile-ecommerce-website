@@ -33,3 +33,8 @@ interface MyContextType {
   calculateGrandTotal: (items: Product[]) => string
 }
 
+interface Props {
+  index: number;
+  showHoleCart: boolean;
+}
+
