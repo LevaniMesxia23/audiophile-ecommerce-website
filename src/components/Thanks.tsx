@@ -51,12 +51,10 @@ function Thanks() {
                     <span className="ml-6 opacity-50">x{item.quantity}</span>
                   </div>
                   <div className="flex flex-col items-center gap-[0.75rem]">
-                    {!showOthers && <div className="w-full bg-black/50 h-[1px] mt-3"></div>}
-                    {items.length > 1 && (
-                      <span className="text-black/50" onClick={() => setShowOthers(!showOthers)}>
+                    {!showOthers && <div className="w-full bg-black/20 h-[1px] mt-3"></div>}
+                     {items.length - 1 === 0 ? <span className="text-black/50" onClick={() => setShowOthers(true)}></span> : <span className="text-black/50" onClick={() => setShowOthers(true)}>
                         {showOthers ? null : `and ${items.length - 1} other item(s)`}
-                      </span>
-                    )}
+                      </span>}
                   </div>
                 </div>
               </div>
@@ -73,7 +71,7 @@ function Thanks() {
                     <span className="ml-6 opacity-50">x{item.quantity}</span>
                   </div>
                   <div className="flex flex-col items-center gap-[0.75rem]">
-                    {showOthers && <div className="w-full bg-black/50 h-[1px] mt-3"></div>}
+                    {showOthers && <div className="w-full bg-black/20 h-[1px] mt-3"></div>}
                     {items.length > 1 && (
                       <span className="text-black/50" onClick={() => setShowOthers(!showOthers)}>
                         {showOthers ? `No other items` : `and ${items.length - 1} other item(s)`}
