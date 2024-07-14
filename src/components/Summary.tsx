@@ -9,11 +9,11 @@ function Summary() {
   const { items } = context;
 
   const calculateVAT = (price: number) => {
-    return (price * 0.2).toFixed(2);
+    return (price * 0.2).toFixed(0);
   };
 
   const calculateTotalWithVAT = (price: number) => {
-    return (price + parseFloat(calculateVAT(price))).toFixed(2);
+    return (price + parseFloat(calculateVAT(price))).toFixed(0);
   };
 
   const calculateGrandTotal = (items: Product[]) => {
@@ -52,7 +52,7 @@ function Summary() {
           </div>
           <div className="flex justify-between">
             <span className="text-[0.9375rem] leading-[1.5625rem] opacity-50">VAT (20%)</span>
-            <span className="text-[1.125rem] font-bold">$ {items.reduce((total, item) => total + parseFloat(calculateVAT(item.price * item.quantity)), 0).toFixed(2)}</span>
+            <span className="text-[1.125rem] font-bold">$ {items.reduce((total, item) => total + parseFloat(calculateVAT(item.price * item.quantity)), 0).toFixed(0)}</span>
           </div>
           <div className="flex justify-between">
             <span className="text-[0.9375rem] leading-[1.5625rem] opacity-50">GRAND TOTAL</span>

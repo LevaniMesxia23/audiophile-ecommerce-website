@@ -28,12 +28,16 @@ const loginSchema = yup.object().shape({
   showCash: yup.boolean(),
   emoneyNum: yup.string().when("showCash", {
   is: false,
-  then: () => yup.string().required(" ioamsdonajnd"),
+  then: () => yup.string().required("emoneyNum is required")
+  .min(5, "emoneyNum must be 5 numbers")
+  .max(5, "emoneyNum must be 5 numbers"),
   otherwise: () => yup.string().optional()
 }),
   emoneyPin: yup.string().when("showCash", {
     is: false,
-    then: () => yup.string().required("daudajdsaj bnishaiudniaj"),
+    then: () => yup.string().required("emoneyPin is required")
+    .min(5, "emoneyPin must be 5 numbers")
+    .max(5, "emoneyPin must be 5 numbers"),
     otherwise: () => yup.string().optional()
   }),
   
