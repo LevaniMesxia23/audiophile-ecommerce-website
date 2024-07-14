@@ -6,7 +6,6 @@ import { MyContext } from "../App";
 import AlsoLike from "./AlsoLike";
 
 function CurrentProduct() {
-
   const singleProduct = data.find((item) => item.slug === location.pathname.slice(9));
   const formattedPrice = singleProduct?.price.toLocaleString();
   const navigate = useNavigate();

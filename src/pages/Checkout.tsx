@@ -7,8 +7,16 @@ import { useEffect, useState } from "react";
 import Shape from "../../public/Shape.svg";
 import Summary from "../components/Summary";
 import Footer from "../components/Footer";
+import { useContext } from "react";
+import { MyContext } from "../App";
+import Thanks from "../components/Thanks";
 
 function Checkout() {
+  const context = useContext(MyContext);
+  if (!context) {
+    throw new Error("Checkout must be used within a MyContext.Provider");
+  }
+  const { showThanks, setShowThanks } = context;
   const [showCash, setShowCash] = useState(true);
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors }, control, reset } = useForm({
@@ -22,11 +30,11 @@ function Checkout() {
     reset({
       showCash: showCash,
     });
-  }, [showCash]);
+  }, [showCash, reset]);
 
   const onSubmit = async (data: unknown) => {
     console.log(data);
-      navigate("/Summary");
+    setShowThanks(true);
   };
 
   const getInputClassName = (error: FieldError | undefined) => error ? "border-[#CD2C2C] border-[2px]" : "border-[#CFCFCF]";
@@ -34,6 +42,8 @@ function Checkout() {
 
   return (
     <>
+    <div className=" relative">
+      {showThanks && <Thanks />}
     <form onSubmit={handleSubmit(onSubmit)} className='px-6 pt-4 bg-[#FAFAFA]'>
       <span className='text-[0.9375rem] opacity-50 leading-[1.5625rem]' onClick={() => navigate(-1)}>Go Back</span>
       <div className=" bg-white rounded-[0.5rem] mt-6 mb-8 pb-[1.94rem]">
@@ -154,6 +164,7 @@ function Checkout() {
     </div>
     </form>
     <Footer />
+    </div>
     </>
   )
 }

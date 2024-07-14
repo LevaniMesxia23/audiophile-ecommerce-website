@@ -6,24 +6,7 @@ function Summary() {
   if (!context) {
     throw new Error("Summary must be used within a MyContext.Provider");
   }
-  const { items } = context;
-
-  const calculateVAT = (price: number) => {
-    return (price * 0.2).toFixed(0);
-  };
-
-  const calculateTotalWithVAT = (price: number) => {
-    return (price + parseFloat(calculateVAT(price))).toFixed(0);
-  };
-
-  const calculateGrandTotal = (items: Product[]) => {
-    return items.reduce((total: number, item: {
-      quantity: number; price: number; 
-}) => {
-      const itemTotalWithVAT = calculateTotalWithVAT(item.price * item.quantity);
-      return total + parseFloat(itemTotalWithVAT) + 50; 
-    }, 0).toLocaleString();
-  };
+  const { items, calculateVAT, calculateGrandTotal } = context;
 
   return (
     <div className="w-full py-8 px-[2.06rem] bg-white rounded-lg">

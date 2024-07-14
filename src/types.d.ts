@@ -27,5 +27,9 @@ interface MyContextType {
   setItems: React.Dispatch<React.SetStateAction<Product[]>>;
   localCount: number;
   setLocalCount: React.Dispatch<React.SetStateAction<number>>;
+  showThanks : boolean;
+  setShowThanks: React.Dispatch<React.SetStateAction<boolean>>;
+  calculateVAT: (price: number) => string;
+  calculateGrandTotal: (items: Product[]) => string
 }
 
