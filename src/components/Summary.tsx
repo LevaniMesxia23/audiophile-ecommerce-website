@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MyContext } from "../App";
 
 function Summary() {
@@ -7,6 +7,12 @@ function Summary() {
     throw new Error("Summary must be used within a MyContext.Provider");
   }
   const { items, calculateVAT, calculateGrandTotal } = context;
+
+  const [clickButton, setClickButton] = useState(0)
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [clickButton]);
 
   return (
     <div className="w-full py-8 px-[2.06rem] bg-white rounded-lg">
@@ -45,7 +51,7 @@ function Summary() {
       </div>
       <div className=" flex justify-center">
 
-      <button type="submit" className="w-full mt-8 mb-[9.25rem] h-12 bg-[#D87D4A] text-white font-bold text-[0.8125rem] leading-[0.0625rem] uppercase">CONTINUE & PAY</button>
+      <button onClick={() => setClickButton(clickButton + 1)} type="submit" className="w-full mt-8 mb-[9.25rem] h-12 bg-[#D87D4A] text-white font-bold text-[0.8125rem] leading-[0.0625rem] uppercase">CONTINUE & PAY</button>
       </div>
     </div>
   );

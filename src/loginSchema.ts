@@ -29,15 +29,15 @@ const loginSchema = yup.object().shape({
   emoneyNum: yup.string().when("showCash", {
   is: false,
   then: () => yup.string().required("emoneyNum is required")
-  .min(5, "emoneyNum must be 5 numbers")
-  .max(5, "emoneyNum must be 5 numbers"),
+  .min(9, "emoneyNum must be 9 numbers")
+  .max(9, "emoneyNum must be 9 numbers"),
   otherwise: () => yup.string().optional()
 }),
   emoneyPin: yup.string().when("showCash", {
     is: false,
     then: () => yup.string().required("emoneyPin is required")
-    .min(5, "emoneyPin must be 5 numbers")
-    .max(5, "emoneyPin must be 5 numbers"),
+    .min(4, "emoneyPin must be 4 numbers")
+    .max(4, "emoneyPin must be 4 numbers"),
     otherwise: () => yup.string().optional()
   }),
   
