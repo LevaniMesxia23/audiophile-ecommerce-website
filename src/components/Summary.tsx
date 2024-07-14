@@ -7,7 +7,6 @@ function Summary() {
     throw new Error("Summary must be used within a MyContext.Provider");
   }
   const { items, calculateVAT, calculateGrandTotal } = context;
-
   const [clickButton, setClickButton] = useState(0)
 
   useEffect(() => {

@@ -1,14 +1,29 @@
 import { useContext } from "react";
 import { MyContext } from "../App";
+import { useNavigate } from "react-router-dom";
 function Thanks() {
   const context = useContext(MyContext);
   if (!context) {
     throw new Error("Summary must be used within a MyContext.Provider");
   }
-  const { items, calculateGrandTotal } = context;
+  const { items, calculateGrandTotal, setLocalCount, setItems, setShowThanks } = context;
+  const navigate = useNavigate()
+  const handleRemove = () => {
+    setItems(() => {
+      localStorage.removeItem("count");
+      return [];
+    });
+    setLocalCount(0)
+  }
+  
+    const handleClick = () => {
+      navigate("/")
+      handleRemove()
+      setShowThanks(false)
+    }
   
   return (
-    <div className=" w-full flex justify-center items-center ">
+    <div className=" w-full flex justify-center items-center">
     <div className=" px-6 absolute top-[4rem] bg-white pb-8 mx-6 rounded-lg z-50">
       <div className=" flex flex-col p-8 ">
       <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
@@ -23,8 +38,8 @@ function Thanks() {
       <div>
         <div className="px-6 ">
         {items.map((item, index) => (
-          <div key={index} className="flex flex-col items-center justify-between w-full min-w-[300px] bg-[#F1F1F1] rounded-tl-lg rounded-tr-lg p-6">
-            <div>
+          <div key={index} className="flex flex-col items-center justify-between w-full min-w-[300px] bg-[#F1F1F1] rounded-tl-lg rounded-tr-lg py-6">
+            <div className=" w-full px-6">
             <div className="flex justify-between">
               <img className="w-[3.125rem] h-[3.125rem] rounded-lg mb-4" src={item?.image.mobile} alt={item?.name} />
               <div className="flex flex-col justify-start ml-4">
@@ -44,7 +59,7 @@ function Thanks() {
           <span className=" text-white/50 leading-[1.5625rem]">GRAND TOTAL</span>
           <span className=" text-white font-bold text-[1.125rem]">$ {calculateGrandTotal(items)}</span>
         </div>
-        <button className="w-full mt-8 h-12 bg-[#D87D4A] text-white font-bold text-[0.8125rem] leading-[0.0625rem] uppercase">BACK TO HOME</button>
+        <button className="w-full mt-8 h-12 bg-[#D87D4A] text-white font-bold text-[0.8125rem] leading-[0.0625rem] uppercase" onClick={handleClick}>BACK TO HOME</button>
         </div>
       </div>
     </div>
