@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 function HomeMain() {
-
   return (
     <>
       <div className="bg-home-header-mobile bg-[center] bg-100% bg-no-repeat h-[44rem] homeImage flex justify-center items-center flex-col px-8 mb-8">

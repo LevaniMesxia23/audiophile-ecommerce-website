@@ -5,8 +5,6 @@ import Footer from "../components/Footer";
 import SeeProducts from "../components/SeeProducts";
 
 function Home() {
-
-
   return (
     <div>
       <HomeMain />
