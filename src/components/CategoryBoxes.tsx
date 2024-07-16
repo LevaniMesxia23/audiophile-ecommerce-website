@@ -22,9 +22,9 @@ function CategoryBoxes() {
   return (
     <>
     <div className="  w-full ">
-    <div className="bg-white pb-10">
+    <div className="bg-white pb-10 flex flex-col md:flex-row md:justify-center md:gap-[0.62rem]">
       <div className=" flex flex-col justify-center items-center">
-        <div className="w-[23.4375rem] mt-20 relative flex justify-center">
+        <div className="w-[23.4375rem] md:w-[13.9375rem] mt-20 relative flex justify-center">
           <div className=" w-full bg-[#F1F1F1] rounded-[0.5rem] max-w-[20.4375rem]">
             <div className=" flex items-center justify-center flex-col gap-[1.06rem]">
               <span className=" mt-[5.5rem]">HEADPHONES</span>
@@ -41,13 +41,13 @@ function CategoryBoxes() {
           <img
             src={HeadphonesImage}
             alt=""
-            className=" absolute -top-[53px] left-[38%]"
+            className=" absolute -top-[53px] left-[38%] md:left-[32%]"
           />
         </div>
       </div>
 
       <div className=" flex flex-col justify-center items-center">
-        <div className="w-[23.4375rem] mt-20 relative flex justify-center">
+        <div className="w-[23.4375rem] md:w-[13.9375rem] mt-20 relative flex justify-center">
           <div className=" w-full bg-[#F1F1F1] rounded-[0.5rem] max-w-[20.4375rem]">
             <div className=" flex items-center justify-center flex-col gap-[1.06rem]">
               <span className=" mt-[5.5rem]">SPEAKERS</span>
@@ -64,13 +64,13 @@ function CategoryBoxes() {
           <img
             src={SpeakersImage}
             alt=""
-            className=" absolute -top-[53px] left-[37%]"
+            className=" absolute -top-[53px] left-[37%] md:left-[30%]"
           />
         </div>
       </div>
 
       <div className=" flex flex-col justify-center items-center">
-        <div className="w-[23.4375rem] mt-20 relative flex justify-center">
+        <div className="w-[23.4375rem] md:w-[13.9375rem] mt-20 relative flex justify-center">
           <div className=" w-full bg-[#F1F1F1] rounded-[0.5rem] max-w-[20.4375rem]">
             <div className=" flex items-center justify-center flex-col gap-[1.06rem]">
               <span className=" mt-[5.5rem]">EARPHONES</span>
@@ -87,7 +87,7 @@ function CategoryBoxes() {
           <img
             src={EarphonesImage}
             alt=""
-            className=" absolute -top-[53px] left-[35%]"
+            className=" absolute -top-[53px] left-[30%] md:left-[25%]"
           />
         </div>
       </div>
