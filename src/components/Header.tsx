@@ -5,16 +5,14 @@ import { MyContext } from "../App";
 import "../index.css"
 import CartBox from "./CartBox";
 import { Link } from "react-router-dom";
-import { useMediaQuery } from '@custom-react-hooks/all';
+
 
 function Header() {
-  const isTablet = useMediaQuery('(min-width: 768px)');
   const context = useContext(MyContext)
-  
   if(!context){
     throw new Error("Header must be used within a MyContext.Provider")
   }
-  const { show, setShow, setShowCartBox, showCartBox, items,} = context
+  const { show, setShow, setShowCartBox, showCartBox, items, isTablet} = context
 
   return (
     <>

@@ -14,6 +14,7 @@ interface Product {
   description: string;
   slug: string;
   price: number;
+  categoryImage: Image;
 }
 
 interface MyContextType {
@@ -31,6 +32,7 @@ interface MyContextType {
   setShowThanks: React.Dispatch<React.SetStateAction<boolean>>;
   calculateVAT: (price: number) => string;
   calculateGrandTotal: (items: Product[]) => string
+  isTablet: boolean;
 }
 
 interface Props {

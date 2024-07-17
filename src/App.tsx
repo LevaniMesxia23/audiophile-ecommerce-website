@@ -11,10 +11,12 @@ import CurrentProduct from "./components/CurrentProduct";
 import Checkout from "./pages/Checkout";
 import Summary from "./components/Summary";
 import Thanks from "./components/Thanks";
+import { useMediaQuery } from '@custom-react-hooks/all';
 
 export const MyContext = createContext<MyContextType | null>(null);
 
 function App() {
+  const isTablet = useMediaQuery('(min-width: 768px)');
   const [show, setShow] = useState<boolean>(false);
   const [showCartBox, setShowCartBox] = useState<boolean>(false);
   const [count, setCount] = useState<number>(0)
@@ -50,7 +52,7 @@ function App() {
     {show && <div className=" fixed h-screen w-screen z-40 bg-black/40 " onClick={() => setShow(!show)}></div>}
     {showCartBox && <div className=" fixed h-screen w-screen z-40 bg-black/40 " onClick={() => setShowCartBox(!showCartBox)}></div>}
     {showThanks && <div className=" fixed h-screen w-screen z-40 bg-black/40 "></div>}
-      <MyContext.Provider value={{ show, setShow, showCartBox, setShowCartBox, count, setCount, items, setItems, localCount, setLocalCount, showThanks, setShowThanks, calculateVAT, calculateGrandTotal }}>
+      <MyContext.Provider value={{ show, setShow, showCartBox, setShowCartBox, count, setCount, items, setItems, localCount, setLocalCount, showThanks, setShowThanks, calculateVAT, calculateGrandTotal, isTablet }}>
         <BrowserRouter>
         {show && <div className=" absolute z-50 left-0 bg-white top-[89px] w-full"><CategoryBoxes /></div>}
           <Header />
