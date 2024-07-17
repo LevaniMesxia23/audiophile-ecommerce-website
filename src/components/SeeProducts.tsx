@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 function SeeProducts() {
   return (
-    <div className=" flex justify-center items-center mt-[7.5rem] flex-col gap-[2rem] px-8 md:px-8">
+    <div className=" flex justify-center items-center mt-[7.5rem] md:mt-[3rem] flex-col gap-[2rem] px-8 md:px-8">
     <div className=" max-w-[20.4375rem] md:min-w-[43.0625rem] bg-[#D87D4A] rounded-[0.5rem] flex justify-center items-center flex-col pb-[3.44rem] ">
         <div className=" border-[1px] rounded-[20rem] h-[20rem] border-white/50 w-[20rem] flex items-center justify-center">
         <div className=" border-[1px] rounded-[17.4375rem] h-[17.4375rem] border-white/50 w-[17.4375rem] flex items-center justify-center">
