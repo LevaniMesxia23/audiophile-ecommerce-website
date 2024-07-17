@@ -16,7 +16,7 @@ function AlsoLike() {
     <>
     <div className=" flex items-center justify-center flex-col mt-[5rem] mb-[4rem]">
       <h1 className=" uppercase text-6 leanding-[2.25rem] font-bold tracking-[0.05356rem]">you may also like</h1>
-      <div>
+      <div className=" md:flex md:gap-[0.69rem]">
         {singleProduct?.others.map((item, index) => (
           <div key={index} className=" flex items-center flex-col justify-center">
             <picture className="flex justify-center items-center mt-6 mb-8">
@@ -26,7 +26,7 @@ function AlsoLike() {
                 media="(min-width:1440px)"
                 srcSet={item.image.desktop} />
               <source
-                width="281px"
+                width="223px"
                 media="(min-width:768px)"
                 srcSet={item.image.tablet} />
               <img
