@@ -91,7 +91,7 @@ function CurrentProduct() {
             <span>{localCount}</span>
             <span className='text-black/25 cursor-pointer' onClick={increment}>+</span>
           </div>
-          <button onClick={addToCart} className="w-full min-w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem]">ADD TO CART</button>
+          <button onClick={addToCart} className="w-full min-w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] hover:bg-[#FBAF85]">ADD TO CART</button>
         </div> : null}
 
         <div>

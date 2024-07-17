@@ -49,7 +49,7 @@ function EarphonesPage() {
             </span>
           </div>
           <Link to={`/current/${item.slug}`}>
-            <button className="w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] mt-7">
+            <button className="w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] mt-7 hover:bg-[#FBAF85]">
               SEE PRODUCT
             </button>
           </Link>

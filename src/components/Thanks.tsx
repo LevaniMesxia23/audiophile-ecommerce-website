@@ -27,7 +27,7 @@ function Thanks() {
 
   return (
     <div className="w-full flex justify-center items-center">
-      <div className="px-6 absolute top-[4rem] bg-white pb-8 mx-6 rounded-lg z-50">
+      <div className="px-6 absolute top-[4rem] bg-white pb-8 mx-6 rounded-lg z-50 md:min-w-[33.75rem]">
         <div className="flex flex-col p-8">
           <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
             <circle cx="32" cy="32" r="32" fill="#D87D4A"/>
@@ -38,9 +38,10 @@ function Thanks() {
         </div>
 
         <div>
-          <div className="px-6">
+          <div className="px-6 md:flex">
+            <div className=" md:flex md:flex-col">
             {items.slice(0, 1).map((item, index) => (
-              <div key={index} className="flex flex-col items-center justify-between w-full min-w-[300px] bg-[#F1F1F1] rounded-tl-lg rounded-tr-lg py-6">
+              <div key={index} className="flex flex-col items-center justify-between w-full min-w-[300px] bg-[#F1F1F1] rounded-tl-lg rounded-tr-lg md:rounded-tr-none md:rounded-bl-lg py-6">
                 <div className="w-full px-6">
                   <div className="flex justify-between">
                     <img className="w-[3.125rem] h-[3.125rem] rounded-lg mb-4" src={item?.image.mobile} alt={item?.name} />
@@ -52,7 +53,7 @@ function Thanks() {
                   </div>
                   <div className="flex flex-col items-center gap-[0.75rem]">
                     {!showOthers && <div className="w-full bg-black/20 h-[1px] mt-3"></div>}
-                     {items.length - 1 === 0 ? <span className="text-black/50" onClick={() => setShowOthers(true)}></span> : <span className="text-black/50" onClick={() => setShowOthers(true)}>
+                     {items.length - 1 === 0 ? <span className="text-black/50 cursor-pointer" onClick={() => setShowOthers(true)}></span> : <span className="text-black/50 cursor-pointer" onClick={() => setShowOthers(true)}>
                         {showOthers ? null : `and ${items.length - 1} other item(s)`}
                       </span>}
                   </div>
@@ -73,7 +74,7 @@ function Thanks() {
                   <div className="flex flex-col items-center gap-[0.75rem]">
                     {showOthers && <div className="w-full bg-black/20 h-[1px] mt-3"></div>}
                     {items.length > 1 && (
-                      <span className="text-black/50" onClick={() => setShowOthers(!showOthers)}>
+                      <span className="text-black/50 cursor-pointer" onClick={() => setShowOthers(!showOthers)}>
                         {showOthers ? `No other items` : `and ${items.length - 1} other item(s)`}
                       </span>
                     )}
@@ -81,12 +82,14 @@ function Thanks() {
                 </div>
               </div>
             ))}
-            <div className="w-full bg-black rounded-br-lg rounded-bl-lg h-100px px-6 py-[0.94rem] flex flex-col gap-2">
+
+            </div>
+            <div className="w-full bg-black rounded-br-lg rounded-bl-lg md:rounded-tr-lg  md:rounded-bl-none md:justify-center h-100px px-6 py-[0.94rem] flex flex-col gap-2">
               <span className="text-white/50 leading-[1.5625rem]">GRAND TOTAL</span>
               <span className="text-white font-bold text-[1.125rem]">$ {calculateGrandTotal(items)}</span>
             </div>
-            <button className="w-full mt-8 h-12 bg-[#D87D4A] text-white font-bold text-[0.8125rem] leading-[0.0625rem] uppercase" onClick={handleClick}>BACK TO HOME</button>
           </div>
+            <button className="w-full mt-8 h-12 bg-[#D87D4A] text-white font-bold text-[0.8125rem] leading-[0.0625rem] uppercase hover:bg-[#FBAF85]" onClick={handleClick}>BACK TO HOME</button>
         </div>
       </div>
     </div>

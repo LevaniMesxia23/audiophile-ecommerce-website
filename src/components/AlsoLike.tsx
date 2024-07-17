@@ -38,7 +38,7 @@ function AlsoLike() {
             </picture>
             <h2 className="uppercase text-6 leanding-[2.25rem] font-bold tracking-[0.10713rem]">{item.name}</h2>
             <Link to={`/current/${item.slug}`}>
-            <button onClick={() => setCount(count + 1)} className="w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] mt-8 mb-[3.5rem]">
+            <button onClick={() => setCount(count + 1)} className="w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] mt-8 mb-[3.5rem] hover:bg-[#FBAF85]">
               SEE PRODUCT
             </button>
             </Link>
