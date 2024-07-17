@@ -21,7 +21,7 @@ function SeeProducts() {
         <Link to={"/current/zx7-speaker"}><button className=" w-[10rem] h-[3rem] border-black border-[1px] text-[0.8125rem] font-bold uppercase leading-[0.0625rem]">See Product</button></Link>
       </div>
       
-      <div className=" flex gap-8 h-[20rem]">
+      <div className=" md:flex md:gap-8 md:h-[20rem]">
         <div className=" mb-8 md:mb-0">
         <img src={EarphonesImage} className="md:h-[20rem] max-w-[20.4375rem] rounded-[0.5rem]" alt="" />
         </div>
