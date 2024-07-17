@@ -36,7 +36,7 @@ function CartBox() {
   }
   
   return (
-    <div className='absolute w-[20.4375rem] bg-white flex flex-col items-center justify-center right-[1.5rem] top-[109px] px-7 py-8 z-50 rounded-[0.5rem]'>
+    <div className='absolute w-[20.4375rem] md:w-[23.5625rem] bg-white flex flex-col items-center justify-center right-[1.5rem] top-[109px] px-7 py-8 z-50 rounded-[0.5rem]'>
       <div className="flex justify-between items-center w-full mb-[1.94rem]">
         <span className="text-[1.125rem] font-bold tracking-[0.08038rem] uppercase">cart ({items.length})</span>
         <span className="leading-[1.5625rem] underline opacity-50 cursor-pointer" onClick={handleRemove}>Remove all</span>
