@@ -87,7 +87,7 @@ function CategoryBoxes() {
           <img
             src={EarphonesImage}
             alt=""
-            className=" absolute -top-[53px] left-[30%] md:left-[25%]"
+            className=" absolute -top-[53px] left-[35%] md:left-[25%]"
           />
         </div>
       </div>
