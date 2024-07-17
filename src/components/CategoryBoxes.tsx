@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 import { useEffect, useContext } from "react";
 import { MyContext } from "../App";
 
-function CategoryBoxes() {
+function CategoryBoxes({animation} : {animation : boolean} ) {
   const context = useContext<MyContextType | null>(MyContext)
   if(!context){
     throw new Error("Header must be used within a MyContext.Provider")
   }
-  const { setShow } = context
+  const { show, setShow } = context
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -21,7 +21,7 @@ function CategoryBoxes() {
   }
   return (
     <>
-    <div className="  w-full ">
+    <div className={`w-full ${show && animation ? 'animate-slideRight' : 'animate-slideLeft'}`}>
     <div className="bg-white pb-10 flex flex-col md:flex-row md:justify-center md:gap-[0.62rem]">
       <div className=" flex flex-col justify-center items-center">
         <div className="w-[23.4375rem] md:w-[13.9375rem] mt-20 relative flex justify-center">

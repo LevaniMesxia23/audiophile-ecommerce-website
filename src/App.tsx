@@ -55,7 +55,7 @@ function App() {
     {showThanks && <div className=" fixed h-screen w-screen z-40 bg-black/40 "></div>}
       <MyContext.Provider value={{ show, setShow, showCartBox, setShowCartBox, count, setCount, items, setItems, localCount, setLocalCount, showThanks, setShowThanks, calculateVAT, calculateGrandTotal, isTablet, isMediumSize }}>
         <BrowserRouter>
-        {show && <div className=" absolute z-50 left-0 bg-white top-[89px] w-full"><CategoryBoxes /></div>}
+        {show && <div className=" absolute z-50 left-0 bg-white top-[89px] w-full"><CategoryBoxes animation={true}/></div>}
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />

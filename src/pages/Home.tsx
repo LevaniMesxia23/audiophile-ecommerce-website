@@ -8,7 +8,7 @@ function Home() {
   return (
     <div>
       <HomeMain />
-      <CategoryBoxes />
+      <CategoryBoxes animation={false}/>
       <SeeProducts />
       <Information />
       <Footer />
