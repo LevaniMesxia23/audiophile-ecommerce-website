@@ -33,6 +33,7 @@ interface MyContextType {
   calculateVAT: (price: number) => string;
   calculateGrandTotal: (items: Product[]) => string
   isTablet: boolean;
+  isMediumSize: boolean;
 }
 
 interface Props {

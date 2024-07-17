@@ -1,4 +1,3 @@
-import React from 'react';
 import LastThreeComponents from "../components/LastThreeComponents";
 import Data from "../../public/data.json";
 import { Link } from "react-router-dom";
