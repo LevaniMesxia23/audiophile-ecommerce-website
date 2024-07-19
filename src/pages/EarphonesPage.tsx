@@ -24,7 +24,7 @@ function EarphonesPage() {
             <source
               width="540px"
               height="560px"
-              media="(min-width:1440px)"
+              media="(min-width:1280px)"
               srcSet={item.categoryImage.desktop} />
             <source
               width="689px"
@@ -34,8 +34,7 @@ function EarphonesPage() {
               width="327px"
               height="352px"
               src={item.categoryImage.mobile}
-              alt={item.name}
-              className="rounded-lg" />
+              alt={item.name}/>
           </picture>
           {item.new && (
             <span className="text-[#D87D4A] md:tracking-[10px]">NEW PRODUCT</span>
