@@ -33,12 +33,12 @@ function SeeProducts() {
       
       <div className=" md:flex md:gap-8 md:h-[20rem]">
         <div className=" mb-8 md:mb-0">
-        <img src={EarphonesImage} className="md:h-[20rem] max-w-[20.4375rem] rounded-[0.5rem]" alt="" />
+        <img src={EarphonesImage} className="md:h-[20rem] max-w-[20.4375rem] rounded-[0.5rem] xl:max-w-[31.7rem]" alt="" />
         </div>
 
-        <div className=" bg-[#F1F1F1] flex flex-col justify-center items-start rounded-[0.5rem] text-[1.75rem] gap-[2rem] min-w-[20.4375rem] pl-6 py-[2.56rem] ">
+        <div className=" bg-[#F1F1F1] flex flex-col justify-center items-start rounded-[0.5rem] text-[1.75rem] gap-[2rem] min-w-[20.4375rem] pl-6 py-[2.56rem] xl:w-[31.7rem] ">
           <span className=" font-bold ">YX1 EARPHONES</span>
-         <Link to={"/current/yx1-earphones"}> <button className=" w-[10rem] h-[3rem] border-black border-[1px] text-[0.8125rem] font-bold uppercase leading-[0.0625rem] hover:bg-black hover:text-white">See Product</button></Link>
+         <Link to={"/current/yx1-earphones"}><button className=" w-[10rem] h-[3rem] border-black border-[1px] text-[0.8125rem] font-bold uppercase leading-[0.0625rem] hover:bg-black hover:text-white">See Product</button></Link>
       </div>
       </div>
     </div>
