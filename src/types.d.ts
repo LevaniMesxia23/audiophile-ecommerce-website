@@ -34,6 +34,7 @@ interface MyContextType {
   calculateGrandTotal: (items: Product[]) => string
   isTablet: boolean;
   isMediumSize: boolean;
+  isDesktop: boolean;
 }
 
 interface Props {
