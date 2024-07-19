@@ -17,7 +17,7 @@ export const MyContext = createContext<MyContextType | null>(null);
 
 function App() {
   const isTablet = useMediaQuery('(min-width: 768px)');
-  const isDesktop = useMediaQuery('(min-width: 1440px)');
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
   const isMediumSize = useMediaQuery('(min-width: 1000px)');
   const [show, setShow] = useState<boolean>(false);
   const [showCartBox, setShowCartBox] = useState<boolean>(false);

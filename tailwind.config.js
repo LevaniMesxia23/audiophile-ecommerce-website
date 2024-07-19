@@ -8,6 +8,7 @@ export default {
     extend: {
       backgroundImage: {
         'home-header-mobile': "url('/public/assets/home/mobile/image-header.jpg')",
+        'home-header-desktop': "url('/public/assets/home/desktop/image-hero.jpg')",
         'speaker-image' : "url('/public/assets/home/mobile/Bitmap.png')",
         'speaker-image-tablet' : "url('/public/assets/home/tablet/Bitmap.png')",
       },
