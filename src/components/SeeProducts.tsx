@@ -26,7 +26,7 @@ function SeeProducts() {
         </div>
       </div>
 
-      <div className=" bg-speaker-image md:bg-speaker-image-tablet bg-[center] bg-no-repeat h-[20rem] flex flex-col justify-center items-start rounded-[0.5rem] text-[1.75rem] gap-[2rem] min-w-[20.4375rem] md:min-w-[43.0625rem] pl-6">
+      <div className={`${isDesktop ? "bg-ZX7-ImageDesktop" : "bg-speaker-image"} md:bg-speaker-image-tablet xl:bg-ZX7-ImageDesktop xl:min-w-[65.5rem] bg-[center] bg-no-repeat h-[20rem] flex flex-col justify-center items-start rounded-[0.5rem] text-[1.75rem] gap-[2rem] min-w-[20.4375rem] md:min-w-[43.0625rem] pl-6`}>
         <span className=" font-bold">ZX7 SPEAKER</span>
         <Link to={"/current/zx7-speaker"}><button className=" w-[10rem] h-[3rem] border-black border-[1px] text-[0.8125rem] font-bold uppercase leading-[0.0625rem] hover:bg-black hover:text-white">See Product</button></Link>
       </div>

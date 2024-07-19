@@ -11,6 +11,7 @@ export default {
         'home-header-desktop': "url('/public/assets/home/desktop/image-hero.jpg')",
         'speaker-image' : "url('/public/assets/home/mobile/Bitmap.png')",
         'speaker-image-tablet' : "url('/public/assets/home/tablet/Bitmap.png')",
+        'ZX7-ImageDesktop' : "url('/public/assets/home/desktop/image-speaker-zx7.jpg')"
       },
       colors: {
         lightgray: '#d3d3d3',
