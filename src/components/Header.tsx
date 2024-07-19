@@ -13,7 +13,7 @@ function Header() {
   const { show, setShow, setShowCartBox, showCartBox, items, isTablet, isDesktop} = context
   return (
     <>
-    <div className=" relative lg:px-[10.31rem] bg-black">
+    <div className=" relative xl:px-[10.31rem] bg-black">
       <div className='bg-black flex justify-between items-center px-6 py-8 border-b-[0.0625] border-opacity-[0.104]'>
         {isTablet ? <div className=" flex gap-[2.62rem] items-center">
         <img src={Hamburger} alt="Hamburger" className='w-4 h-4 cursor-pointer' onClick={() => setShow(!show)}/>
@@ -28,7 +28,7 @@ function Header() {
         </>)
         }
         {isDesktop && 
-         <ul className=" lg:-ml-[2.5rem] uppercase flex justify-center items-center flex-col md:flex-row text-white text-[0.8125rem] font-bold gap-4 md:gap-[2.14rem]">
+         <ul className=" xl:-ml-[2.5rem] uppercase flex justify-center items-center flex-col md:flex-row text-white text-[0.8125rem] font-bold gap-4 md:gap-[2.14rem]">
          <Link to={"/"}><li className="hover:text-[#D87D4A]">home</li></Link>
          <Link to={"/headphones"}><li className="hover:text-[#D87D4A]">Headphones</li></Link>
          <Link to={"/speakers"}><li className="hover:text-[#D87D4A]">Speakers</li></Link>
