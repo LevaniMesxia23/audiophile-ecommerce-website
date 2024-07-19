@@ -28,20 +28,20 @@ function CategoryBoxes({ animation }: { animation: boolean }) {
           name: "HEADPHONES",
           link: "/headphones",
           image: HeadphonesImage,
-          imgStyle: "left-[38%] md:left-[32%]"
+          imgStyle: "left-[38%] md:left-[32%] xl:left-[40%]"
         }, {
           name: "SPEAKERS",
           link: "/speakers",
           image: SpeakersImage,
-          imgStyle: "left-[37%] md:left-[30%]"
+          imgStyle: "left-[37%] md:left-[30%] xl:left-[40%]"
         }, {
           name: "EARPHONES",
           link: "/earphones",
           image: EarphonesImage,
-          imgStyle: "left-[35%] md:left-[25%]"
+          imgStyle: "left-[35%] md:left-[25%] xl:left-[34%]"
         }].map(({ name, link, image, imgStyle }, index) => (
           <div key={index} className="flex flex-col justify-center items-center">
-            <div className="w-[23.4375rem] md:w-[13.9375rem] mt-20 relative flex justify-center">
+            <div className="w-[23.4375rem] md:w-[13.9375rem] xl:w-[21.875rem] mt-20 relative flex justify-center">
               <div className="w-full bg-[#F1F1F1] rounded-[0.5rem] max-w-[20.4375rem]">
                 <div className="flex items-center justify-center flex-col gap-[1.06rem]">
                   <span className="mt-[5.5rem]">{name}</span>
