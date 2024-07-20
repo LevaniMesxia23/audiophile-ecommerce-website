@@ -28,7 +28,7 @@ function Header() {
         </>)
         }
         {isDesktop && 
-         <ul className=" xl:-ml-[2.5rem] uppercase flex justify-center items-center flex-col md:flex-row text-white text-[0.8125rem] font-bold gap-4 md:gap-[2.14rem]">
+         <ul className=" xl:-ml-[9.5rem] uppercase flex justify-center items-center flex-col md:flex-row text-white text-[0.8125rem] font-bold gap-4 md:gap-[2.14rem]">
          <Link to={"/"}><li className="hover:text-[#D87D4A]">home</li></Link>
          <Link to={"/headphones"}><li className="hover:text-[#D87D4A]">Headphones</li></Link>
          <Link to={"/speakers"}><li className="hover:text-[#D87D4A]">Speakers</li></Link>

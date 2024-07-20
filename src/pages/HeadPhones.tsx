@@ -22,7 +22,7 @@ const HeadPhones: React.FC = () => {
       )}
       {filtered.reverse().map((item, index) => (
         <div key={index} className={`flex items-center justify-center flex-col mb-[6.5rem] xl:flex-row ${index === 1 ? 'xl:flex-row-reverse' : ''} xl:gap-[7.48rem] xl:px-[10.31rem]`}>
-          <picture className="flex justify-center items-center mt-6 mb-8">
+          <picture className={`flex justify-center items-center mt-6 mb-8 ${index === 1 ? 'xl:-ml-[7rem]' : ''}`}>
             <source
               width="540px"
               height="560px"
