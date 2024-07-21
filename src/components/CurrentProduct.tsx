@@ -57,7 +57,7 @@ function CurrentProduct() {
         <div className="md:w-full md:flex md:justify-start">
           <span className='text-[0.9375rem] opacity-50 leading-[1.5625rem] hover:text-[#D87D4A] cursor-pointer' onClick={() => navigate(-1)}>Go Back</span>
         </div>
-        <div className={`transition-all duration-500 ${isMediumSize ? "md:gap-[13rem]" : null} md:flex md:gap-[4.34rem] md:items-center `}>
+        <div className={`transition-all duration-500 ${isMediumSize ? "md:gap-[13rem]" : null} md:flex md:gap-[4.34rem] xl:gap-[13.5rem] md:items-center `}>
           <picture className='flex justify-center items-center mt-6 mb-8'>
             <source width="540px" height="560px" media="(min-width:1440px)" srcSet={singleProduct?.image.desktop} />
             <source width="281px" media="(min-width:768px)" srcSet={singleProduct?.image.tablet} />
@@ -95,13 +95,15 @@ function CurrentProduct() {
         </div> : null}
 
         <div>
-          <div>
+          <div className=" xl:flex xl:items-start xl:justify-between">
+
+          <div className=" md:max-w-[689px]">
             <h2 className='mt-[5.5rem] mb-6 text-[1.5rem] font-bold leading-[2.25rem] tracking-[0.05356rem]'>FEATURES</h2>
             <p className='text-[0.9375rem] leading-[1.5625rem] text-black/50 whitespace-pre-line mb-[5.5rem]'>{singleProduct?.features}</p>
           </div>
 
-          <div className='mb-[5rem] md:flex md:gap-[0.69rem]'>
-            <h2 className='text-[1.5rem] leading-[2.25rem] font-bold tracking-[0.05356rem] mb-6 md:pr-[15rem]'>IN THE BOX</h2>
+          <div className='mb-[5rem] md:flex md:gap-[0.69rem] xl:flex-col xl:items-start'>
+            <h2 className='text-[1.5rem] leading-[2.25rem] font-bold tracking-[0.05356rem] mb-6 md:pr-[15rem] xl:pr-0 xl:mt-[5.5rem]'>IN THE BOX</h2>
             <div>
               {singleProduct?.includes.map((item, index) => (
                 <div key={index} className='flex gap-[1.31rem]'>
@@ -111,8 +113,9 @@ function CurrentProduct() {
               ))}
             </div>
           </div>
+          </div>
           <div className="flex items-center flex-col md:flex-row justify-center">
-            <div className=" md:flex md:flex-col md:items-center md:justify-center md:gap-4 md:mr-4">
+            <div className=" md:flex md:flex-col md:items-center md:justify-center md:gap-8 md:mr-8">
             <picture>
               <source width="445px" height="280px" media="(min-width:1440px)" srcSet={singleProduct?.gallery.first.desktop} />
               <source width="277px" height="174px" media="(min-width:768px)" srcSet={singleProduct?.gallery.first.tablet} />

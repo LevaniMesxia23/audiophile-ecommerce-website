@@ -28,12 +28,12 @@ function CategoryBoxes({ animation }: { animation: boolean }) {
           name: "HEADPHONES",
           link: "/headphones",
           image: HeadphonesImage,
-          imgStyle: "left-[38%] md:left-[32%] xl:left-[40%]"
+          imgStyle: "left-[38%] md:left-[32%] xl:left-[38%]"
         }, {
           name: "SPEAKERS",
           link: "/speakers",
           image: SpeakersImage,
-          imgStyle: "left-[37%] md:left-[30%] xl:left-[40%]"
+          imgStyle: "left-[37%] md:left-[30%] xl:left-[38%]"
         }, {
           name: "EARPHONES",
           link: "/earphones",
