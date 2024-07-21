@@ -62,7 +62,7 @@ function Checkout() {
 
             <div className=" gap-[0.56rem] flex flex-col md:w-full">
               <span className={`${getErrorText(errors.email)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>Email Address</span>
-              <input {...register("email")} className={`${getInputClassName(errors.email)} border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="alexei@mail.com" type="text" />
+              <input {...register("email")} className={`${getInputClassName(errors.email)} border-[0.0625rem]  w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="alexei@mail.com" type="text" />
               {errors.email && <p className="text-[#CD2C2C]">{errors.email.message}</p>}
             </div>
           </div>
@@ -77,7 +77,7 @@ function Checkout() {
                     {...field}
                     mask="+1 (___) ___-__-__"
                     replacement={{ _: /\d/ }}
-                    className={`${getInputClassName(errors.phoneNumber)} border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`}
+                    className={`${getInputClassName(errors.phoneNumber)} border-[0.0625rem] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`}
                     placeholder="+1 202-555-0136"
                   />
                 )}
@@ -94,26 +94,26 @@ function Checkout() {
         <div className=" flex flex-col gap-4 w-full">
         <div className=" gap-[0.56rem] flex flex-col">
           <span className={` ${getErrorText(errors.address)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>Your Address</span>
-          <input {...register("address")} className={` ${getInputClassName(errors.address)} border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="1137 Williams Avenue" type="text" />
+          <input {...register("address")} className={` ${getInputClassName(errors.address)} border-[0.0625rem] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="1137 Williams Avenue" type="text" />
           {errors.address && <p className="text-[#CD2C2C]">{errors.address.message}</p>}
         </div>
       <div className=" md:w-full md:flex md:gap-4">
         <div className=" gap-[0.56rem] flex flex-col md:w-full">
           <span className={` ${getErrorText(errors.zipCode)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>ZIP Code</span>
-          <input {...register("zipCode")} className={` ${getInputClassName(errors.zipCode)} border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="10001" type="number" />
+          <input {...register("zipCode")} className={` ${getInputClassName(errors.zipCode)} border-[0.0625rem] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="10001" type="number" />
           {errors.zipCode && <p className="text-[#CD2C2C]">{errors.zipCode.message}</p>}
         </div>
 
         <div className=" gap-[0.56rem] flex flex-col md:w-full">
           <span className={` ${getErrorText(errors.city)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>City</span>
-          <input {...register("city")} className={` ${getInputClassName(errors.city)} border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="New York" type="text" />
+          <input {...register("city")} className={` ${getInputClassName(errors.city)} border-[0.0625rem] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="New York" type="text" />
           {errors.city && <p className="text-[#CD2C2C]">{errors.city.message}</p>}
         </div>
       </div>
 
         <div className=" gap-[0.56rem] flex flex-col">
           <span className={`${getErrorText(errors.country)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>Country</span>
-          <input {...register("country")} className={` ${getInputClassName(errors.country)} border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="United States" type="text" />
+          <input {...register("country")} className={` ${getInputClassName(errors.country)} border-[0.0625rem] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="United States" type="text" />
           {errors.country && <p className="text-[#CD2C2C]">{errors.country.message}</p>}
         </div>
         </div>
@@ -147,12 +147,12 @@ function Checkout() {
          <div className=" w-full md:w-full md:flex md:gap-4">
           <div className=" gap-[0.56rem] flex flex-col mt-8 md:w-[50%]">
           <span className={` ${getErrorText(errors.emoneyNum)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>e-Money Number</span>
-          <input {...register("emoneyNum")} className={` ${getInputClassName(errors.emoneyNum)} border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="238521993" type="number" />
+          <input {...register("emoneyNum")} className={` ${getInputClassName(errors.emoneyNum)} border-[0.0625rem] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="238521993" type="number" />
           {errors.emoneyNum && <p className="text-[#CD2C2C]">{errors.emoneyNum.message}</p>}
         </div>
         <div className=" gap-[0.56rem] flex flex-col mt-8 md:w-[50%]">
           <span className={` ${getErrorText(errors.emoneyPin)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>e-Money PIN</span>
-          <input {...register("emoneyPin")} className={` ${getInputClassName(errors.emoneyPin)} border-[0.0625rem] border-[#CFCFCF] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="6891" type="number" />
+          <input {...register("emoneyPin")} className={` ${getInputClassName(errors.emoneyPin)} border-[0.0625rem] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="6891" type="number" />
           {errors.emoneyPin && <p className="text-[#CD2C2C]">{errors.emoneyPin.message}</p>}
         </div>
         </div>}
