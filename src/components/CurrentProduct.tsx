@@ -1,40 +1,54 @@
-
 import data from "../../public/data.json";
-import { useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { MyContext } from "../App";
 import AlsoLike from "./AlsoLike";
 
 function CurrentProduct() {
-  const singleProduct = data.find((item) => item.slug === location.pathname.slice(9));
-  const formattedPrice = singleProduct?.price.toLocaleString();
+  const location = useLocation();
   const navigate = useNavigate();
+  const slug = location.pathname.slice(9);
+  const singleProduct = data.find((item) => item.slug === slug);
+
+  const [localCount, setLocalCount] = useState(0); 
+  const [prevSlug, setPrevSlug] = useState(slug); 
+
+  const formattedPrice = singleProduct?.price.toLocaleString();
   const context = useContext(MyContext);
+
   if (!context) {
     throw new Error("Header must be used within a MyContext.Provider");
   }
-  const { items, setCount, setItems, localCount, setLocalCount, count, isTablet, isMediumSize } = context;
+
+  const { items, setCount, setItems, isTablet, isMediumSize } = context;
 
   const increment = () => {
     setLocalCount(localCount + 1);
   };
 
   const decrement = () => {
-    if (localCount > 1) {
+    if (localCount > 0) {
       setLocalCount(localCount - 1);
     }
   };
+
+  useEffect(() => {
+    if (slug !== prevSlug) {
+      setLocalCount(0);
+      setPrevSlug(slug);
+    }
+  }, [slug, prevSlug]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    if(items.length !== 0){
+    if (items.length !== 0) {
       localStorage.setItem("count", JSON.stringify(items));
     }
-  }, [count, localCount])
-  
+  }, [items]);
+
   const addToCart = () => {
     if (singleProduct && localCount > 0) {
       setItems(prevItems => {
@@ -47,10 +61,10 @@ function CurrentProduct() {
           return [...prevItems, { ...singleProduct, quantity: localCount }];
         }
       });
-      setCount(localCount); 
+      setCount(localCount);
     }
   };
-  
+
   return (
     <>
       <div className='px-6 pt-4 md:flex md:items-center md:flex-col'>
