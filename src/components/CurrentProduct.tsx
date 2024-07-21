@@ -55,7 +55,7 @@ function CurrentProduct() {
     <>
       <div className='px-6 pt-4 md:flex md:items-center md:flex-col'>
         <div className="md:w-full md:flex md:justify-start">
-          <span className='text-[0.9375rem] opacity-50 leading-[1.5625rem]' onClick={() => navigate(-1)}>Go Back</span>
+          <span className='text-[0.9375rem] opacity-50 leading-[1.5625rem] hover:text-[#D87D4A] cursor-pointer' onClick={() => navigate(-1)}>Go Back</span>
         </div>
         <div className={`transition-all duration-500 ${isMediumSize ? "md:gap-[13rem]" : null} md:flex md:gap-[4.34rem] md:items-center `}>
           <picture className='flex justify-center items-center mt-6 mb-8'>
@@ -75,11 +75,11 @@ function CurrentProduct() {
           {isTablet && 
            <div className='flex items-center w-full justify-center gap-4'>
           <div className='py-[0.94rem] px-[0.97rem] min-w-[7.5rem] md:w-[10rem] bg-[#F1F1F1] flex items-center justify-center gap-5 md:gap-[2.5rem] h-12'>
-            <span className='text-black/25 cursor-pointer' onClick={decrement}>-</span>
+            <span className='text-black/25 cursor-pointer hover:text-[#D87D4A]' onClick={decrement}>-</span>
             <span>{localCount}</span>
-            <span className='text-black/25 cursor-pointer' onClick={increment}>+</span>
+            <span className='text-black/25 cursor-pointer hover:text-[#D87D4A]' onClick={increment}>+</span>
           </div>
-          <button onClick={addToCart} className=" min-w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem]">ADD TO CART</button>
+          <button onClick={addToCart} className=" min-w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] hover:bg-[#FBAF85]">ADD TO CART</button>
         </div>}
 
           </div>
@@ -87,9 +87,9 @@ function CurrentProduct() {
 
         {!isTablet ? <div className='flex items-center w-full justify-center gap-4'>
           <div className='py-[0.94rem] px-[0.97rem] min-w-[7.5rem] bg-[#F1F1F1] flex items-center justify-center gap-5 h-12'>
-            <span className='text-black/25 cursor-pointer' onClick={decrement}>-</span>
+            <span className='text-black/25 cursor-pointer hover:text-[#D87D4A]' onClick={decrement}>-</span>
             <span>{localCount}</span>
-            <span className='text-black/25 cursor-pointer' onClick={increment}>+</span>
+            <span className='text-black/25 cursor-pointer hover:text-[#D87D4A]' onClick={increment}>+</span>
           </div>
           <button onClick={addToCart} className="w-full min-w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] hover:bg-[#FBAF85]">ADD TO CART</button>
         </div> : null}

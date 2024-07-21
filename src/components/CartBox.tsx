@@ -47,7 +47,7 @@ function CartBox() {
     <div className={`absolute w-[20.4375rem] md:w-[23.5625rem] bg-white flex flex-col items-center justify-center right-[1.5rem] top-[109px] px-7 py-8 z-50 rounded-[0.5rem] ${showCartBox ? 'animate-slideIn' : 'animate-slideOut'}`}>
       <div className="flex justify-between items-center w-full mb-[1.94rem]">
         <span className="text-[1.125rem] font-bold tracking-[0.08038rem] uppercase">cart ({items.length})</span>
-        <span className="leading-[1.5625rem] underline opacity-50 cursor-pointer" onClick={handleRemove}>Remove all</span>
+        <span className="leading-[1.5625rem] underline opacity-50 cursor-pointer hover:text-[#D87D4A]" onClick={handleRemove}>Remove all</span>
       </div>
       {items.map((item, index) => (
         <div key={index} className="flex items-center justify-between w-full mb-4">
@@ -57,9 +57,9 @@ function CartBox() {
             <span className="leading-[1.5625rem] text-[0.875rem] font-bold opacity-50">$ {item.price.toLocaleString()}</span>
           </div>
           <div className='py-[0.94rem] px-[0.97rem] w-[6rem] ml-5 bg-[#F1F1F1] flex items-center justify-center gap-5 h-8'>
-            <span className='text-black/25 cursor-pointer' onClick={() => decrement(item)}>-</span>
+            <span className='text-black/25 cursor-pointer hover:text-[#D87D4A]' onClick={() => decrement(item)}>-</span>
             <span>{item.quantity}</span>
-            <span className='text-black/25 cursor-pointer' onClick={() => increment(item)}>+</span>
+            <span className='text-black/25 cursor-pointer hover:text-[#D87D4A]' onClick={() => increment(item)}>+</span>
           </div>
         </div>
       ))}
@@ -68,7 +68,7 @@ function CartBox() {
         <span className="leading-[1.5625rem] text-[0.9375rem] opacity-50">TOTAL</span>
         <span className="text-[1.125rem] font-bold">$ {calculateTotal()}</span>
       </div>
-      {items.length > 0 ? (<Link to={"/Checkout"}><button onClick={handleButtonClick} className="w-full min-w-[10rem] h-[3rem] bg-[#D87D4A] text-white text-[0.8125rem] mt-6">CHECKOUT</button></Link>) : null}
+      {items.length > 0 ? (<Link to={"/Checkout"}><button onClick={handleButtonClick} className="w-full min-w-[10rem] h-[3rem] bg-[#D87D4A] hover:bg-[#FBAF85] text-white text-[0.8125rem] mt-6">CHECKOUT</button></Link>) : null}
     </div>
   );
 }

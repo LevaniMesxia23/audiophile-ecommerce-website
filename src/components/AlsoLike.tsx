@@ -21,8 +21,8 @@ function AlsoLike() {
           <div key={index} className=" flex items-center flex-col justify-center">
             <picture className="flex justify-center items-center mt-6 mb-8">
               <source
-                width="540px"
-                height="560px"
+                width="350px"
+                height="318px"
                 media="(min-width:1440px)"
                 srcSet={item.image.desktop} />
               <source
