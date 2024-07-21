@@ -44,8 +44,8 @@ function Checkout() {
     <>
     <div className=" relative ">
       {showThanks && <Thanks />}
-    <div className=" xl:flex">
-    <form onSubmit={handleSubmit(onSubmit)} className='px-6 pt-4 bg-[#FAFAFA]  xl:py-[8.88rem] xl:pl-[10.31rem]'>
+      <div className=" xl:flex">
+      <form onSubmit={handleSubmit(onSubmit)} className='px-6 pt-4 bg-[#FAFAFA]  xl:py-[8.88rem] xl:pl-[10.31rem]'>
       <span className='text-[0.9375rem] opacity-50 leading-[1.5625rem]' onClick={() => navigate(-1)}>Go Back</span>
       <div className=" bg-white rounded-[0.5rem] mt-6 mb-8 pb-[1.94rem]">
 
@@ -160,18 +160,20 @@ function Checkout() {
         {showCash && <div className=" flex gap-8 items-center mt-[1.88rem]">
           <img src={Shape} alt="" />
         <span className=" text-[0.9375rem] leading-[1.5625rem] text-black/50">The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</span>
-        </div>}
-      </div>
-      </div>
+          </div>}
+         </div>
+         </div>
 
-    <div className=" w-full flex items-center justify-center">
-    {!isDesktop && <Summary />}
-    </div>
-    </form>
-    {isDesktop && <Summary />}
-    </div>
+          <div className=" w-full flex items-center justify-center">
+          {!isDesktop && <Summary />}
+          </div>
+        </form> 
+          <div className=" xl:pt-[11.81rem] xl:bg-[#FAFAFA] xl:w-full xl:pr-[10.31rem]">
+          {isDesktop && <Summary />}
+          </div>
+        </div>
+      </div>
     <Footer />
-    </div>
     </>
   )
 }

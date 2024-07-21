@@ -50,7 +50,7 @@ function Summary() {
       </div>
       <div className=" flex justify-center">
 
-      <button onClick={() => setClickButton(clickButton + 1)} type="submit" className="w-full mt-8 mb-[9.25rem] h-12 bg-[#D87D4A] text-white font-bold text-[0.8125rem] leading-[0.0625rem] uppercase">CONTINUE & PAY</button>
+      <button onClick={() => setClickButton(clickButton + 1)} type="submit" className="w-full mt-8 mb-[9.25rem] xl:mb-8 h-12 bg-[#D87D4A] text-white font-bold text-[0.8125rem] leading-[0.0625rem] uppercase">CONTINUE & PAY</button>
       </div>
     </div>
   );
