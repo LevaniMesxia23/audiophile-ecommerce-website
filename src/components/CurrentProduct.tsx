@@ -59,7 +59,7 @@ function CurrentProduct() {
         </div>
         <div className={`transition-all duration-500 ${isMediumSize ? "md:gap-[13rem]" : null} md:flex md:gap-[4.34rem] xl:gap-[13.5rem] md:items-center `}>
           <picture className='flex justify-center items-center mt-6 mb-8'>
-            <source width="540px" height="560px" media="(min-width:1440px)" srcSet={singleProduct?.image.desktop} />
+            <source width="540px" height="560px" media="(min-width:1280px)" srcSet={singleProduct?.image.desktop} />
             <source width="281px" media="(min-width:768px)" srcSet={singleProduct?.image.tablet} />
             <img width="100%" height="327px" src={singleProduct?.image.mobile} alt="product" />
           </picture>
@@ -102,7 +102,7 @@ function CurrentProduct() {
             <p className='text-[0.9375rem] leading-[1.5625rem] text-black/50 whitespace-pre-line mb-[5.5rem]'>{singleProduct?.features}</p>
           </div>
 
-          <div className='mb-[5rem] md:flex md:gap-[0.69rem] xl:flex-col xl:items-start'>
+          <div className='mb-[5rem] md:flex md:flex-col md:gap-[0.69rem] xl:flex-col xl:items-start'>
             <h2 className='text-[1.5rem] leading-[2.25rem] font-bold tracking-[0.05356rem] mb-6 md:pr-[15rem] xl:pr-0 xl:mt-[5.5rem]'>IN THE BOX</h2>
             <div>
               {singleProduct?.includes.map((item, index) => (
@@ -117,19 +117,19 @@ function CurrentProduct() {
           <div className="flex items-center flex-col md:flex-row justify-center">
             <div className=" md:flex md:flex-col md:items-center md:justify-center md:gap-8 md:mr-8">
             <picture>
-              <source width="445px" height="280px" media="(min-width:1440px)" srcSet={singleProduct?.gallery.first.desktop} />
+              <source width="445px" height="280px" media="(min-width:1280px)" srcSet={singleProduct?.gallery.first.desktop} />
               <source width="277px" height="174px" media="(min-width:768px)" srcSet={singleProduct?.gallery.first.tablet} />
               <img className='rounded-lg mb-5 md:mb-0' width="327px" height="174px" src={singleProduct?.gallery.first.mobile} alt="" />
             </picture>
             <picture>
-              <source width="445px" height="280px" media="(min-width:1440px)" srcSet={singleProduct?.gallery.second.desktop} />
+              <source width="445px" height="280px" media="(min-width:1280px)" srcSet={singleProduct?.gallery.second.desktop} />
               <source width="277px" height="174px" media="(min-width:768px)" srcSet={singleProduct?.gallery.second.tablet} />
               <img className='rounded-lg mb-5 md:mb-0' width="327px" height="174px" src={singleProduct?.gallery.second.mobile} alt="product" />
             </picture>
 
             </div>
             <picture>
-              <source width="635px" height="592px" media="(min-width:1440px)" srcSet={singleProduct?.gallery.third.desktop} />
+              <source width="635px" height="592px" media="(min-width:1280px)" srcSet={singleProduct?.gallery.third.desktop} />
               <source width="395px" height="368px" media="(min-width:768px)" srcSet={singleProduct?.gallery.third.tablet} />
               <img className='rounded-lg' width="327px" height="368px" src={singleProduct?.gallery.third.mobile} alt="" />
             </picture>
