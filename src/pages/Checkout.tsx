@@ -16,7 +16,7 @@ function Checkout() {
   if (!context) {
     throw new Error("Checkout must be used within a MyContext.Provider");
   }
-  const { showThanks, setShowThanks } = context;
+  const { showThanks, setShowThanks, isDesktop } = context;
   const [showCash, setShowCash] = useState(true);
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors }, control, reset } = useForm({
@@ -42,9 +42,10 @@ function Checkout() {
 
   return (
     <>
-    <div className=" relative">
+    <div className=" relative ">
       {showThanks && <Thanks />}
-    <form onSubmit={handleSubmit(onSubmit)} className='px-6 pt-4 bg-[#FAFAFA]'>
+    <div className=" xl:flex">
+    <form onSubmit={handleSubmit(onSubmit)} className='px-6 pt-4 bg-[#FAFAFA]  xl:py-[8.88rem] xl:pl-[10.31rem]'>
       <span className='text-[0.9375rem] opacity-50 leading-[1.5625rem]' onClick={() => navigate(-1)}>Go Back</span>
       <div className=" bg-white rounded-[0.5rem] mt-6 mb-8 pb-[1.94rem]">
 
@@ -164,9 +165,11 @@ function Checkout() {
       </div>
 
     <div className=" w-full flex items-center justify-center">
-    <Summary />
+    {!isDesktop && <Summary />}
     </div>
     </form>
+    {isDesktop && <Summary />}
+    </div>
     <Footer />
     </div>
     </>

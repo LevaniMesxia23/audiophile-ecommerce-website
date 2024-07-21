@@ -5,7 +5,7 @@ import CategoryBoxes from './CategoryBoxes'
 function LastThreeComponents() {
   return (
     <div>
-      <CategoryBoxes />
+      <CategoryBoxes animation={false} />
       <Information />
       <Footer />
     </div>

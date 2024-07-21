@@ -14,7 +14,7 @@ function Summary() {
   }, [clickButton]);
 
   return (
-    <div className="w-full py-8 px-[2.06rem] bg-white rounded-lg">
+    <div className="w-full py-8 px-[2.06rem] bg-white rounded-lg ">
       <span className="text-[1.125rem] font-bold uppercase">Summary</span>
       <div className="mt-[1.94rem]">
         {items.map((item, index) => (
