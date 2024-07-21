@@ -44,10 +44,9 @@ function Checkout() {
     <>
     <div className=" relative ">
       {showThanks && <Thanks />}
-      <div className=" xl:flex">
-      <form onSubmit={handleSubmit(onSubmit)} className='px-6 pt-4 bg-[#FAFAFA]  xl:py-[8.88rem] xl:pl-[10.31rem] xl:flex xl:items-start xl:gap-[1.88rem]'>
+      <form onSubmit={handleSubmit(onSubmit)} className='px-6 pt-4 bg-[#FAFAFA] xl:py-[4.94rem] xl:pl-[10.31rem] xl:flex xl:items-start xl:gap-[1.88rem]'>
       <div>
-      <span className='text-[0.9375rem] opacity-50 leading-[1.5625rem]' onClick={() => navigate(-1)}>Go Back</span>
+      <span className='text-[0.9375rem] opacity-50 leading-[1.5625rem] cursor-pointer hover:text-[#D87D4A]' onClick={() => navigate(-1)}>Go Back</span>
       <div className=" bg-white rounded-[0.5rem] mt-6 mb-8 pb-[1.94rem]">
 
       <div className=" p-6 flex flex-col items-start justify-center">
@@ -146,7 +145,7 @@ function Checkout() {
         </div>
 
         {!showCash &&
-         <div className=" w-full md:w-full md:flex md:gap-4">
+         <div className=" w-full md:w-full md:flex md:gap-4 xl:w-[614.46px]">
           <div className=" gap-[0.56rem] flex flex-col mt-8 md:w-[50%]">
           <span className={` ${getErrorText(errors.emoneyNum)} text-[0.75rem] font-bold -tracking-[0.01563rem]`}>e-Money Number</span>
           <input {...register("emoneyNum")} className={` ${getInputClassName(errors.emoneyNum)} border-[0.0625rem] w-full h-[3.5rem] rounded-[0.5rem] pl-6 placeholder:font-bold placeholder:text-[0.875rem] placeholder:-tracking-[0.01563rem]`} placeholder="238521993" type="text" />
@@ -169,9 +168,7 @@ function Checkout() {
            <Summary />
           </div>
         </form> 
-
         </div>
-      </div>
     <Footer />
     </>
   )
