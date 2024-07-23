@@ -85,10 +85,8 @@ function Checkout() {
               />
           {errors.phoneNumber && <p className="text-[#CD2C2C]">{errors.phoneNumber.message}</p>}
         </div>
-
         </div>
       </div>
-
       <div className=" p-6 flex flex-col items-start justify-center">
         <span className=" text-[#D87D4A] text-[0.8125rem] leading-[1.5625rem] tracking-[0.05806rem] font-bold uppercase mb-4">shipping info</span>
 
