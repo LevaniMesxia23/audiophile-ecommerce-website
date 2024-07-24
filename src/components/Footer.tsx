@@ -19,7 +19,7 @@ function Footer() {
       <span className=" text-center md:text-start w-[20.4375rem] text-white/50 my-12 md:w-full xl:w-[33.75rem] xl:my-0 xl:mb-[3.5rem]">Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</span>
       <div className=" md:flex md:justify-between md:w-full">
         <span className="text-center max-w-[20.4375rem] text-white/50 mb-12">Copyright 2021. All Rights Reserved</span>
-        <div className=" flex gap-5 mb-[2.38rem] h-6 items-center justify-center sm:mt-[3rem] md:mt-0 xl:-mt-[4.5rem]">
+        <div className=" flex gap-5 mb-[2.38rem] h-6 items-center justify-center sm:mt-[3rem] md:mt-0 xl:-mt-[4.5rem] mt-8">
             <img className=" cursor-pointer" src="/assets/shared/desktop/icon-facebook.svg" alt="" />
             <img className=" cursor-pointer" src="/assets/shared/desktop/icon-twitter.svg" alt="" />
             <img className=" cursor-pointer" src="/assets/shared/desktop/icon-instagram.svg" alt="" />
